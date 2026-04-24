@@ -1,3 +1,4 @@
+import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
@@ -23,6 +24,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   );
 }
 export default function ResidentialSoftWashing() {
+  useSEO(
+    "Soft Washing in Sanford, NC | Next Level Window Cleaning",
+    "Safe, low-pressure soft washing for roofs, siding, and delicate surfaces in Sanford, NC. Removes algae, mold, and mildew without damage."
+  );
   return (
     <Layout>
       <section className="relative min-h-[380px] flex items-center overflow-hidden">

@@ -1,4 +1,5 @@
 // FAQ.tsx — Next Level Window Cleaning
+import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
@@ -52,6 +53,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function FAQ() {
+  useSEO(
+    "FAQs | Next Level Window Cleaning Sanford, NC",
+    "Answers to common questions about window cleaning, pressure washing, and exterior services in Sanford, NC. Locally owned and fully insured."
+  );
   return (
     <Layout>
       <section className="py-12 bg-sky-tint border-b border-gray-200">

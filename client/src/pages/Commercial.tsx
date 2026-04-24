@@ -1,5 +1,6 @@
 // Commercial.tsx — Next Level Window Cleaning
 // Written for business buyers: storefronts, offices, restaurants, property managers
+import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
@@ -34,6 +35,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   );
 }
 export default function Commercial() {
+  useSEO(
+    "Commercial Window & Exterior Cleaning Sanford, NC | Next Level",
+    "Reliable commercial exterior cleaning in Sanford, NC. Keep your storefront or business looking professional with our window and pressure washing services."
+  );
   return (
     <Layout>
       <section className="relative min-h-[420px] flex items-center overflow-hidden">

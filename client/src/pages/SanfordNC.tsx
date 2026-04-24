@@ -1,5 +1,6 @@
 // SanfordNC.tsx — Next Level Window Cleaning
 // Local SEO landing page for Sanford, NC — primary service area
+import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
@@ -22,6 +23,10 @@ const neighborhoods = [
 ];
 
 export default function SanfordNC() {
+  useSEO(
+    "Window Cleaning in Sanford, NC | Next Level Window Cleaning",
+    "Top-rated window cleaning and exterior washing in Sanford, NC. Locally owned by Adam Griffith. Serving Lee County homeowners and businesses."
+  );
   return (
     <Layout>
       {/* Hero */}

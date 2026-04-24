@@ -1,4 +1,5 @@
 // ResidentialPressureWashing.tsx — Next Level Window Cleaning
+import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
@@ -29,6 +30,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function ResidentialPressureWashing() {
+  useSEO(
+    "Pressure Washing in Sanford, NC | Next Level Window Cleaning",
+    "Professional pressure washing for driveways, sidewalks, decks, and fences in Sanford and Lee County, NC. Locally owned, fully insured."
+  );
   return (
     <Layout>
       <section className="relative min-h-[380px] flex items-center overflow-hidden">

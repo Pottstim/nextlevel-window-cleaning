@@ -1,4 +1,5 @@
 // OurWork.tsx — Next Level Window Cleaning
+import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
@@ -19,6 +20,10 @@ const galleryItems = [
 ];
 
 export default function OurWork() {
+  useSEO(
+    "Our Work | Window Cleaning & Pressure Washing Results | Sanford, NC",
+    "See before-and-after results from Next Level Window Cleaning. Real jobs, real results for homes and businesses in Sanford, NC."
+  );
   return (
     <Layout>
       {/* Hero */}

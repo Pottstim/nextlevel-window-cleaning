@@ -1,4 +1,5 @@
 // Residential.tsx — Next Level Window Cleaning
+import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
@@ -11,6 +12,10 @@ const services = [
   { icon: Lightbulb, title: "Christmas Lights", desc: "Professional holiday light installation and takedown. Book early — slots fill fast.", href: "/residential/christmas-lights" },
 ];
 export default function Residential() {
+  useSEO(
+    "Residential Exterior Cleaning in Sanford, NC | Next Level",
+    "Window cleaning, pressure washing, soft washing, gutter cleaning, and Christmas lights for Sanford-area homeowners. Free estimates."
+  );
   return (
     <Layout>
       <section className="relative min-h-[380px] flex items-center overflow-hidden">

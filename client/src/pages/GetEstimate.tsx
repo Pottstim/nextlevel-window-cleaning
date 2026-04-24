@@ -1,6 +1,7 @@
 // GetEstimate.tsx — Next Level Window Cleaning
 // Email delivery via Web3Forms (https://web3forms.com) — free, no backend required
 // TO ACTIVATE: Replace YOUR_WEB3FORMS_ACCESS_KEY or set VITE_WEB3FORMS_KEY in Settings → Secrets
+import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
@@ -220,6 +221,10 @@ function CommercialForm() {
 }
 
 export default function GetEstimate() {
+  useSEO(
+    "Get a Free Estimate | Next Level Window Cleaning Sanford, NC",
+    "Request a free window cleaning or pressure washing estimate in Sanford, NC. Same-day response. Locally owned, fully insured."
+  );
   const [formType, setFormType] = useState<FormType>("residential");
   return (
     <Layout>

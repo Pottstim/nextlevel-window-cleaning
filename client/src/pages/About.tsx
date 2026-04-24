@@ -1,4 +1,5 @@
 // About.tsx — Next Level Window Cleaning
+import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
@@ -15,6 +16,10 @@ const values = [
 ];
 
 export default function About() {
+  useSEO(
+    "About Next Level Window Cleaning | Sanford, NC",
+    "Meet Adam Griffith and the Next Level Window Cleaning team. Locally owned, fully insured, serving Sanford and Lee County, NC."
+  );
   return (
     <Layout>
       {/* Hero */}

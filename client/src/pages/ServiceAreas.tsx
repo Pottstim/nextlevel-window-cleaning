@@ -1,4 +1,5 @@
 // ServiceAreas.tsx — Next Level Window Cleaning
+import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
@@ -14,6 +15,10 @@ const areas = [
 ];
 
 export default function ServiceAreas() {
+  useSEO(
+    "Service Areas | Next Level Window Cleaning | Sanford, NC",
+    "Next Level Window Cleaning serves Sanford, Cameron, Spring Lake, Broadway, and surrounding Lee County, NC communities."
+  );
   return (
     <Layout>
       <section className="py-12 bg-sky-tint border-b border-gray-200">
@@ -22,7 +27,7 @@ export default function ServiceAreas() {
             <Link href="/"><span className="hover:text-gray-600 cursor-pointer">Home</span></Link><span>/</span>
             <span className="text-gray-600">Service Areas</span>
           </nav>
-          <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3" style={{ fontFamily: 'Manrope, sans-serif' }}>Service Areas</h1>
+          <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3" style={{ fontFamily: 'Manrope, sans-serif' }}>Window Cleaning Service Areas in Lee County, NC</h1>
           <p className="text-gray-600">We serve Sanford, NC and surrounding communities in Lee County and beyond. Not sure if we cover your area? Just call us.</p>
         </div>
       </section>

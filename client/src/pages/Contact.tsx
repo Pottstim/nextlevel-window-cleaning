@@ -1,6 +1,7 @@
 // Contact.tsx — Next Level Window Cleaning
 // Email delivery via Web3Forms (https://web3forms.com) — free, no backend required
 // TO ACTIVATE: Replace YOUR_WEB3FORMS_ACCESS_KEY below with the key from web3forms.com/access
+import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
@@ -26,6 +27,10 @@ function SuccessMessage() {
 }
 
 export default function Contact() {
+  useSEO(
+    "Contact Us | Next Level Window Cleaning in Sanford, NC",
+    "Get a free exterior cleaning estimate. Call or message our team for window washing, gutter cleaning, and pressure washing in the Sandhills."
+  );
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -74,7 +79,7 @@ export default function Contact() {
             <Link href="/"><span className="hover:text-gray-600 cursor-pointer">Home</span></Link><span>/</span>
             <span className="text-gray-600">Contact</span>
           </nav>
-          <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3" style={{ fontFamily: 'Manrope, sans-serif' }}>Contact Us</h1>
+          <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3" style={{ fontFamily: 'Manrope, sans-serif' }}>Contact Next Level Window Cleaning</h1>
           <p className="text-gray-600">We're easy to reach. Call, text, or fill out the form below.</p>
         </div>
       </section>

@@ -3,7 +3,8 @@
 // All 10 required sections: Hero, Trust Bar, Services, Video Proof, Audience Split,
 // How It Works, Service Area, Testimonials, FAQ Preview, Final CTA
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
@@ -129,9 +130,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function Home() {
-  useEffect(() => {
-    document.title = "Next Level Window Cleaning | Sanford, NC";
-  }, []);
+  useSEO(
+    "Next Level Window Cleaning | Sanford, NC",
+    "Window cleaning, pressure washing & exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (323) 485-1020."
+  );
 
   return (
     <Layout>

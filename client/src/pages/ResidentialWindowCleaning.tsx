@@ -1,4 +1,5 @@
 // ResidentialWindowCleaning.tsx — Next Level Window Cleaning
+import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
@@ -37,6 +38,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function ResidentialWindowCleaning() {
+  useSEO(
+    "Residential Window Cleaning in Sanford, NC | Next Level",
+    "Professional residential window cleaning in Sanford and the Sandhills. We safely remove NC pollen, dirt, and grime for streak-free glass."
+  );
   return (
     <Layout>
       {/* Hero */}

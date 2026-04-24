@@ -3,7 +3,7 @@
 // All 10 required sections: Hero, Trust Bar, Services, Video Proof, Audience Split,
 // How It Works, Service Area, Testimonials, FAQ Preview, Final CTA
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
@@ -129,6 +129,10 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "Next Level Window Cleaning | Sanford, NC";
+  }, []);
+
   return (
     <Layout>
       {/* ── 1. HERO ── */}

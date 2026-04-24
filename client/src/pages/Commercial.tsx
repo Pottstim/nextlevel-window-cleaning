@@ -6,7 +6,7 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone, Building2, Calendar, Shield, FileText, Clock } from "lucide-react";
-const COMMERCIAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/commercial-cleaning-2LfYXgPvdXkMYqw2zwpNwA.webp";
+const COMMERCIAL_IMG = "/manus-storage/gallery_06_ec82e12a.jpg";
 const reasons = [
   { icon: Calendar, title: "Reliable Scheduling", desc: "We show up when we say we will. Recurring service available weekly, bi-weekly, or monthly." },
   { icon: Shield, title: "Fully Insured", desc: "We carry full liability insurance. You can add us as additionally insured if required." },

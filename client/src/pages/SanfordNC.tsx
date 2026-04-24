@@ -6,7 +6,7 @@ import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, MapPin, ArrowRight, Phone } from "lucide-react";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/hero-window-cleaning-bd4k27QyRUkKtJYTJxskGD.webp";
+const HERO_IMG = "/manus-storage/gallery_03_24de3848.jpg";
 
 const services = [
   "Residential Window Cleaning",

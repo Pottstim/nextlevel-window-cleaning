@@ -14,9 +14,10 @@ import {
   Sparkles, Droplets, Lightbulb, Wind
 } from "lucide-react";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/hero-window-cleaning-bd4k27QyRUkKtJYTJxskGD.webp";
-const COMMERCIAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/commercial-cleaning-2LfYXgPvdXkMYqw2zwpNwA.webp";
-const PRESSURE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/pressure-washing-h6rFi5EsLLVCkny9S7NBDx.webp";
+// Real job photos from Next Level Window Cleaning
+const HERO_IMG = "/manus-storage/gallery_09_8d96bd3c.jpg";       // Soft wash action shot — Adam on deck
+const COMMERCIAL_IMG = "/manus-storage/gallery_02_f1eae76f.jpg"; // Exterior house washing
+const PRESSURE_IMG = "/manus-storage/gallery_10_5b1362dd.jpg";   // Deck rail cleaning close-up
 
 const trustItems = [
   { icon: Shield, label: "Fully Insured" },

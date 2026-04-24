@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ArrowRight, Phone, Lightbulb } from "lucide-react";
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/about-owner-immczEsLDP9vspUAY9jzEb.webp";
+const HERO_IMG = "/manus-storage/gallery_03_24de3848.jpg";
 const services = ["Professional installation on rooflines, trees, and shrubs","Custom design to match your home","Safe, secure mounting — no damage to your property","Takedown and storage at season's end","Commercial and HOA properties welcome"];
 export default function ResidentialChristmasLights() {
   useSEO(

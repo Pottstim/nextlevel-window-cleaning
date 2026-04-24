@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { ArrowRight, Phone, Sparkles, Droplets, Wind, Lightbulb } from "lucide-react";
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/hero-window-cleaning-bd4k27QyRUkKtJYTJxskGD.webp";
+const HERO_IMG = "/manus-storage/gallery_01_9f404602.jpg";
 const services = [
   { icon: Sparkles, title: "Window Cleaning", desc: "Interior and exterior window cleaning for homes of all sizes. Streak-free results every time.", href: "/residential/window-cleaning" },
   { icon: Droplets, title: "Pressure Washing", desc: "Driveways, patios, siding, decks — we remove years of buildup fast.", href: "/residential/pressure-washing" },

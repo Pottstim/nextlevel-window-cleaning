@@ -6,7 +6,7 @@ import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone } from "lucide-react";
 
-const PRESSURE_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/pressure-washing-h6rFi5EsLLVCkny9S7NBDx.webp";
+const PRESSURE_IMG = "/manus-storage/gallery_11_ad03b31d.jpg";
 
 const surfaces = ["Driveways & Sidewalks","Patios & Decks","Siding & Brick","Fences","Garage Floors","Retaining Walls"];
 const faqs = [

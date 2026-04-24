@@ -5,8 +5,8 @@ import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { Shield, Star, MapPin, CheckCircle, Phone, ArrowRight } from "lucide-react";
 
-const ABOUT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/about-owner-immczEsLDP9vspUAY9jzEb.webp";
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/hero-window-cleaning-bd4k27QyRUkKtJYTJxskGD.webp";
+const ABOUT_IMG = "/manus-storage/gallery_10_5b1362dd.jpg"; // Adam cleaning deck rails
+const HERO_IMG = "/manus-storage/gallery_01_9f404602.jpg";  // Residential window cleaning
 
 const values = [
   { icon: Shield, title: "Fully Insured", desc: "We carry full liability insurance on every job. You're protected." },

@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone } from "lucide-react";
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/hero-window-cleaning-bd4k27QyRUkKtJYTJxskGD.webp";
+const HERO_IMG = "/manus-storage/gallery_09_8d96bd3c.jpg";
 const surfaces = ["Roof Shingles","Vinyl Siding","Stucco","Wood Siding","Painted Surfaces","Gutters & Fascia"];
 const faqs = [
   { q: "What is soft washing?", a: "Soft washing uses low-pressure water combined with biodegradable cleaning solutions to safely remove algae, mold, mildew, and stains from delicate surfaces that would be damaged by high-pressure washing." },

@@ -1,10 +1,14 @@
 // OurWork.tsx — Next Level Window Cleaning
-// Design: Local Pride Modernism — real job photos, masonry grid, aqua service badges
+// Design: Local Pride Modernism — real job photos, masonry grid, before/after slider, aqua service badges
 import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
+import BeforeAfter from "@/components/BeforeAfter";
 import { ArrowRight, Facebook } from "lucide-react";
+
+const BEFORE_IMG = "/manus-storage/before-after-before_2bea0ebd.jpg";
+const AFTER_IMG = "/manus-storage/before-after-after_faba211b.jpg";
 
 const galleryItems = [
   {
@@ -145,6 +149,33 @@ export default function OurWork() {
                 <p className="text-xs text-gray-500 mt-0.5">{label}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── BEFORE / AFTER SHOWCASE ── */}
+      <section className="py-14 bg-sky-tint">
+        <div className="container">
+          <div className="mb-8">
+            <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-2">
+              Before &amp; After
+            </h2>
+            <p className="text-gray-500 text-sm ml-5">
+              Drag the slider to reveal the transformation — a real job in Sanford, NC.
+            </p>
+          </div>
+          <div className="max-w-lg mx-auto">
+            <BeforeAfter
+              beforeSrc={BEFORE_IMG}
+              afterSrc={AFTER_IMG}
+              beforeLabel="Before"
+              afterLabel="After"
+              alt="Window cleaning before and after Sanford NC"
+              aspectRatio="3/4"
+            />
+            <p className="text-center text-xs text-gray-400 mt-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
+              Christmas light installation — Sanford, NC
+            </p>
           </div>
         </div>
       </section>

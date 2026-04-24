@@ -102,7 +102,7 @@ export default function SanfordNC() {
           <div className="ml-5 rounded-2xl overflow-hidden shadow-lg h-64">
             <iframe
               title="Next Level Window Cleaning — Sanford NC"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52303.37!2d-79.1775!3d35.4799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89ac5b1e9d4e4e4b%3A0x0!2sSanford%2C%20NC!5e0!3m2!1sen!2sus!4v1"
+              src="https://maps.google.com/maps?q=Sanford+NC+window+cleaning&output=embed"
               className="w-full h-full border-0"
               loading="lazy"
               allowFullScreen

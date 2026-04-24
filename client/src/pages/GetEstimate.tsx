@@ -1,9 +1,17 @@
 // GetEstimate.tsx — Next Level Window Cleaning
-// Main conversion page with residential and commercial estimate forms
+// Email delivery via Web3Forms (https://web3forms.com) — free, no backend required
+// TO ACTIVATE: Replace YOUR_WEB3FORMS_ACCESS_KEY or set VITE_WEB3FORMS_KEY in Settings → Secrets
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
-import { Phone, CheckCircle, Home as HomeIcon, Building2 } from "lucide-react";
+import { Phone, CheckCircle, Home as HomeIcon, Building2, Loader2 } from "lucide-react";
+
+// ─── WEB3FORMS CONFIG ────────────────────────────────────────────────────────
+// 1. Go to https://web3forms.com/access
+// 2. Enter your email (info@nextlevelwindowsnc.com or your Gmail)
+// 3. Copy the Access Key and paste it below, OR add it as VITE_WEB3FORMS_KEY in Manus Secrets
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
+// ─────────────────────────────────────────────────────────────────────────────
 
 type FormType = "residential" | "commercial";
 
@@ -20,14 +28,53 @@ function SuccessMessage() {
   );
 }
 
+async function submitToWeb3Forms(payload: Record<string, string>) {
+  const res = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({ access_key: WEB3FORMS_KEY, from_name: "Next Level Window Cleaning Website", ...payload }),
+  });
+  return res.json();
+}
+
 function ResidentialForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({ name: "", phone: "", email: "", address: "", city: "", service: "", timeframe: "", bestTime: "", notes: "" });
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => setForm({ ...form, [e.target.name]: e.target.value });
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSubmitted(true); };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    try {
+      const data = await submitToWeb3Forms({
+        subject: `New Residential Estimate Request — ${form.name} — ${form.service}`,
+        name: form.name,
+        phone: form.phone,
+        email: form.email || "Not provided",
+        address: `${form.address}, ${form.city}`,
+        service: form.service,
+        timeframe: form.timeframe || "No preference",
+        best_time_to_call: form.bestTime || "Any time",
+        notes: form.notes || "None",
+        lead_type: "Residential",
+        botcheck: "",
+      });
+      if (data.success) setSubmitted(true);
+      else setError("Something went wrong. Please call us at (323) 485-1020.");
+    } catch {
+      setError("Network error. Please call us at (323) 485-1020.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   if (submitted) return <SuccessMessage />;
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
       <div className="grid sm:grid-cols-2 gap-5">
         <div><label className="form-label">Your Name *</label><input required name="name" value={form.name} onChange={handleChange} className="form-input" placeholder="Jane Smith" /></div>
         <div><label className="form-label">Phone Number *</label><input required name="phone" value={form.phone} onChange={handleChange} className="form-input" placeholder="(910) 555-0100" /></div>
@@ -40,37 +87,38 @@ function ResidentialForm() {
       <div><label className="form-label">Service Needed *</label>
         <select required name="service" value={form.service} onChange={handleChange} className="form-input">
           <option value="">Select a service...</option>
-          <option value="window-cleaning">Window Cleaning</option>
-          <option value="pressure-washing">Pressure Washing</option>
-          <option value="soft-washing">Soft Washing</option>
-          <option value="gutter-cleaning">Gutter Cleaning</option>
-          <option value="christmas-lights">Christmas Lights</option>
-          <option value="multiple">Multiple Services</option>
+          <option value="Window Cleaning">Window Cleaning</option>
+          <option value="Pressure Washing">Pressure Washing</option>
+          <option value="Soft Washing">Soft Washing</option>
+          <option value="Gutter Cleaning">Gutter Cleaning</option>
+          <option value="Christmas Lights">Christmas Lights</option>
+          <option value="Multiple Services">Multiple Services</option>
         </select>
       </div>
       <div className="grid sm:grid-cols-2 gap-5">
         <div><label className="form-label">Preferred Timeframe</label>
           <select name="timeframe" value={form.timeframe} onChange={handleChange} className="form-input">
             <option value="">No preference</option>
-            <option value="asap">As soon as possible</option>
-            <option value="this-week">This week</option>
-            <option value="next-week">Next week</option>
-            <option value="this-month">This month</option>
+            <option value="As soon as possible">As soon as possible</option>
+            <option value="This week">This week</option>
+            <option value="Next week">Next week</option>
+            <option value="This month">This month</option>
           </select>
         </div>
         <div><label className="form-label">Best Time to Reach You</label>
           <select name="bestTime" value={form.bestTime} onChange={handleChange} className="form-input">
             <option value="">Any time</option>
-            <option value="morning">Morning (7am–12pm)</option>
-            <option value="afternoon">Afternoon (12pm–5pm)</option>
-            <option value="evening">Evening (5pm–7pm)</option>
+            <option value="Morning (7am–12pm)">Morning (7am–12pm)</option>
+            <option value="Afternoon (12pm–5pm)">Afternoon (12pm–5pm)</option>
+            <option value="Evening (5pm–7pm)">Evening (5pm–7pm)</option>
           </select>
         </div>
       </div>
       <div><label className="form-label">Additional Notes</label><textarea name="notes" value={form.notes} onChange={handleChange} className="form-input" rows={3} placeholder="Any details about your property or specific concerns..." /></div>
-      <input type="hidden" name="lead_type" value="residential" />
-      <input type="hidden" name="source_page" value="/get-a-free-estimate" />
-      <button type="submit" className="btn-coral text-base py-3.5 justify-center">Submit Estimate Request</button>
+      {error && <p className="text-red-500 text-sm">{error}</p>}
+      <button type="submit" disabled={loading} className="btn-coral text-base py-3.5 justify-center disabled:opacity-60">
+        {loading ? <><Loader2 size={16} className="animate-spin" /> Submitting...</> : "Submit Estimate Request"}
+      </button>
       <p className="text-xs text-gray-400 text-center">We typically respond the same day. Your information is never shared.</p>
     </form>
   );
@@ -78,12 +126,45 @@ function ResidentialForm() {
 
 function CommercialForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({ businessName: "", contactName: "", phone: "", email: "", address: "", propertyType: "", service: "", frequency: "", scope: "", schedule: "", notes: "" });
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => setForm({ ...form, [e.target.name]: e.target.value });
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSubmitted(true); };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    try {
+      const data = await submitToWeb3Forms({
+        subject: `New Commercial Bid Request — ${form.businessName} — ${form.service}`,
+        business_name: form.businessName,
+        contact_name: form.contactName,
+        phone: form.phone,
+        email: form.email || "Not provided",
+        address: form.address,
+        property_type: form.propertyType || "Not specified",
+        service: form.service || "Not specified",
+        frequency: form.frequency || "Not specified",
+        scope: form.scope || "Not specified",
+        preferred_schedule: form.schedule || "Not specified",
+        notes: form.notes || "None",
+        lead_type: "Commercial",
+        botcheck: "",
+      });
+      if (data.success) setSubmitted(true);
+      else setError("Something went wrong. Please call us at (323) 485-1020.");
+    } catch {
+      setError("Network error. Please call us at (323) 485-1020.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   if (submitted) return <SuccessMessage />;
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
       <div className="grid sm:grid-cols-2 gap-5">
         <div><label className="form-label">Business Name *</label><input required name="businessName" value={form.businessName} onChange={handleChange} className="form-input" placeholder="Acme Retail LLC" /></div>
         <div><label className="form-label">Contact Name *</label><input required name="contactName" value={form.contactName} onChange={handleChange} className="form-input" placeholder="John Smith" /></div>
@@ -97,21 +178,21 @@ function CommercialForm() {
         <div><label className="form-label">Type of Property</label>
           <select name="propertyType" value={form.propertyType} onChange={handleChange} className="form-input">
             <option value="">Select...</option>
-            <option value="retail">Retail Storefront</option>
-            <option value="office">Office Building</option>
-            <option value="restaurant">Restaurant / Café</option>
-            <option value="medical">Medical / Dental</option>
-            <option value="property-mgmt">Property Management</option>
-            <option value="other">Other</option>
+            <option value="Retail Storefront">Retail Storefront</option>
+            <option value="Office Building">Office Building</option>
+            <option value="Restaurant / Café">Restaurant / Café</option>
+            <option value="Medical / Dental">Medical / Dental</option>
+            <option value="Property Management">Property Management</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div><label className="form-label">Service Needed</label>
           <select name="service" value={form.service} onChange={handleChange} className="form-input">
             <option value="">Select...</option>
-            <option value="window-cleaning">Window Cleaning</option>
-            <option value="pressure-washing">Pressure Washing</option>
-            <option value="soft-washing">Soft Washing</option>
-            <option value="multiple">Multiple Services</option>
+            <option value="Window Cleaning">Window Cleaning</option>
+            <option value="Pressure Washing">Pressure Washing</option>
+            <option value="Soft Washing">Soft Washing</option>
+            <option value="Multiple Services">Multiple Services</option>
           </select>
         </div>
       </div>
@@ -119,19 +200,20 @@ function CommercialForm() {
         <div><label className="form-label">One-Time or Recurring?</label>
           <select name="frequency" value={form.frequency} onChange={handleChange} className="form-input">
             <option value="">Select...</option>
-            <option value="one-time">One-Time</option>
-            <option value="weekly">Weekly</option>
-            <option value="biweekly">Bi-Weekly</option>
-            <option value="monthly">Monthly</option>
+            <option value="One-Time">One-Time</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Bi-Weekly">Bi-Weekly</option>
+            <option value="Monthly">Monthly</option>
           </select>
         </div>
         <div><label className="form-label">Estimated Scope</label><input name="scope" value={form.scope} onChange={handleChange} className="form-input" placeholder="e.g., 3 storefronts, 2-story building" /></div>
       </div>
       <div><label className="form-label">Preferred Schedule</label><input name="schedule" value={form.schedule} onChange={handleChange} className="form-input" placeholder="e.g., Early morning before 8am, weekdays only" /></div>
       <div><label className="form-label">Notes</label><textarea name="notes" value={form.notes} onChange={handleChange} className="form-input" rows={3} placeholder="Any special requirements, access notes, or questions..." /></div>
-      <input type="hidden" name="lead_type" value="commercial" />
-      <input type="hidden" name="source_page" value="/get-a-free-estimate" />
-      <button type="submit" className="btn-coral text-base py-3.5 justify-center">Submit Commercial Bid Request</button>
+      {error && <p className="text-red-500 text-sm">{error}</p>}
+      <button type="submit" disabled={loading} className="btn-coral text-base py-3.5 justify-center disabled:opacity-60">
+        {loading ? <><Loader2 size={16} className="animate-spin" /> Submitting...</> : "Submit Commercial Bid Request"}
+      </button>
       <p className="text-xs text-gray-400 text-center">We respond the same business day. Your information is never shared.</p>
     </form>
   );

@@ -1,8 +1,17 @@
 // Contact.tsx — Next Level Window Cleaning
+// Email delivery via Web3Forms (https://web3forms.com) — free, no backend required
+// TO ACTIVATE: Replace YOUR_WEB3FORMS_ACCESS_KEY below with the key from web3forms.com/access
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
-import { Phone, Mail, MapPin, Clock, CheckCircle, Facebook } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, CheckCircle, Facebook, Loader2 } from "lucide-react";
+
+// ─── WEB3FORMS CONFIG ────────────────────────────────────────────────────────
+// 1. Go to https://web3forms.com/access
+// 2. Enter your email (info@nextlevelwindowsnc.com or your Gmail)
+// 3. Copy the Access Key and paste it below
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
+// ─────────────────────────────────────────────────────────────────────────────
 
 function SuccessMessage() {
   return (
@@ -10,7 +19,7 @@ function SuccessMessage() {
       <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
         <CheckCircle size={28} className="text-green-500" />
       </div>
-      <h3 className="text-xl font-extrabold text-gray-900 mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>Message Received!</h3>
+      <h3 className="text-xl font-extrabold text-gray-900 mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>Message Sent!</h3>
       <p className="text-gray-600 text-sm">We'll get back to you the same day. You can also reach us at <a href="tel:3234851020" className="font-semibold" style={{ color: 'var(--brand-aqua)' }}>(323) 485-1020</a>.</p>
     </div>
   );
@@ -18,9 +27,44 @@ function SuccessMessage() {
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({ name: "", phone: "", email: "", message: "" });
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setForm({ ...form, [e.target.name]: e.target.value });
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSubmitted(true); };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New Contact Form Submission — ${form.name}`,
+          from_name: "Next Level Window Cleaning Website",
+          name: form.name,
+          phone: form.phone,
+          email: form.email || "Not provided",
+          message: form.message,
+          botcheck: "",
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please call us at (323) 485-1020.");
+      }
+    } catch {
+      setError("Network error. Please call us at (323) 485-1020.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <Layout>
@@ -96,11 +140,16 @@ export default function Contact() {
               <h2 className="font-extrabold text-gray-900 text-xl mb-5" style={{ fontFamily: 'Manrope, sans-serif' }}>Send a Message</h2>
               {submitted ? <SuccessMessage /> : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  {/* Honeypot spam protection */}
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
                   <div><label className="form-label">Your Name *</label><input required name="name" value={form.name} onChange={handleChange} className="form-input" placeholder="Jane Smith" /></div>
                   <div><label className="form-label">Phone *</label><input required name="phone" value={form.phone} onChange={handleChange} className="form-input" placeholder="(910) 555-0100" /></div>
                   <div><label className="form-label">Email</label><input type="email" name="email" value={form.email} onChange={handleChange} className="form-input" placeholder="jane@example.com" /></div>
                   <div><label className="form-label">Message *</label><textarea required name="message" value={form.message} onChange={handleChange} className="form-input" rows={4} placeholder="Tell us what you need..." /></div>
-                  <button type="submit" className="btn-coral py-3 justify-center">Send Message</button>
+                  {error && <p className="text-red-500 text-sm">{error}</p>}
+                  <button type="submit" disabled={loading} className="btn-coral py-3 justify-center disabled:opacity-60">
+                    {loading ? <><Loader2 size={16} className="animate-spin" /> Sending...</> : "Send Message"}
+                  </button>
                   <p className="text-xs text-gray-400 text-center">We respond the same day.</p>
                 </form>
               )}

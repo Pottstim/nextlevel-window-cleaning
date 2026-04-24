@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 // Real job photos from Next Level Window Cleaning
-const HERO_IMG = "/manus-storage/hero-action_920fd698.jpg";      // Adam full-body action shot — bright, face visible, water spray
+const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/hero-generated-v1-n8YeMmynmW4YiJFzATdXJt.webp"; // Generated wide hero — soft-wash action, golden hour, NC suburban home
 const COMMERCIAL_IMG = "/manus-storage/gallery_02_f1eae76f.jpg"; // Exterior house washing
 const PRESSURE_IMG = "/manus-storage/gallery_10_5b1362dd.jpg";   // Deck rail cleaning close-up
 

@@ -8,8 +8,8 @@ import BeforeAfter from "@/components/BeforeAfter";
 import { CheckCircle, ArrowRight, Phone, Lightbulb, Star } from "lucide-react";
 
 const HERO_IMG = "/manus-storage/christmas-lights_14661dc9.jpg";
-const BEFORE_IMG = "/manus-storage/before-after-before_2bea0ebd.jpg";
-const AFTER_IMG = "/manus-storage/before-after-after_faba211b.jpg";
+const BEFORE_IMG = "/manus-storage/before-after-after_faba211b.jpg";
+const AFTER_IMG = "/manus-storage/before-after-before_2bea0ebd.jpg";
 
 const services = [
   "Professional installation on rooflines, trees, and shrubs",

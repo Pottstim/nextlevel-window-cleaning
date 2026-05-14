@@ -11,8 +11,8 @@ import {
 import { LOGO_URL } from "@/config/images";
 
 // Using local NC area code (910) for Sanford - update with actual number
-const PHONE = "(910) 555-0100";
-const PHONE_HREF = "tel:9105550100";
+const PHONE = "(323) 485-1020";
+const PHONE_HREF = "tel:3234851020";
 const FB_URL = "https://www.facebook.com/people/Next-Level-Window-Cleaning/61579913446585/";
 
 const navItems = [

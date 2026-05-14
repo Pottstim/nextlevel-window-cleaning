@@ -6,8 +6,8 @@ import CTASection from "@/components/CTASection";
 import { MapPin, ArrowRight } from "lucide-react";
 
 // Phone number with local NC area code
-const PHONE = "(910) 555-0100";
-const PHONE_HREF = "tel:9105550100";
+const PHONE = "(323) 485-1020";
+const PHONE_HREF = "tel:3234851020";
 
 const areas = [
   { name: "Sanford, NC", slug: "/service-areas/sanford-nc", county: "Lee County", primary: true, desc: "Our home base. We serve all neighborhoods throughout Sanford, NC." },

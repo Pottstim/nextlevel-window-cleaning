@@ -8,8 +8,8 @@ import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone } from "lucide-r
 import { PRESSURE_WASHING_HERO } from "@/config/images";
 
 // Phone number with local NC area code
-const PHONE = "(910) 555-0100";
-const PHONE_HREF = "tel:9105550100";
+const PHONE = "(323) 485-1020";
+const PHONE_HREF = "tel:3234851020";
 
 const surfaces = ["Driveways & Sidewalks","Patios & Decks","Siding & Brick","Fences","Garage Floors","Retaining Walls"];
 const faqs = [

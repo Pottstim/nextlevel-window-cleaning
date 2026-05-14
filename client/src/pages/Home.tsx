@@ -23,8 +23,8 @@ const COMMERCIAL_IMG = GALLERY.gallery_02;
 const PRESSURE_IMG = GALLERY.gallery_10;
 
 // Phone number with local NC area code
-const PHONE = "(910) 555-0100";
-const PHONE_HREF = "tel:9105550100";
+const PHONE = "(323) 485-1020";
+const PHONE_HREF = "tel:3234851020";
 
 const trustItems = [
   { icon: Shield, label: "Fully Insured" },
@@ -140,7 +140,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function Home() {
   useSEO(
     "Next Level Window Cleaning | Sanford, NC",
-    "Window cleaning, pressure washing & exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (910) 555-0100.",
+    "Window cleaning, pressure washing & exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (323) 485-1020.",
     "/"
   );
 

@@ -9,8 +9,8 @@ import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone, Building2, Cale
 import { COMMERCIAL_HERO } from "@/config/images";
 
 // Phone number with local NC area code
-const PHONE = "(910) 555-0100";
-const PHONE_HREF = "tel:9105550100";
+const PHONE = "(323) 485-1020";
+const PHONE_HREF = "tel:3234851020";
 
 const reasons = [
   { icon: Calendar, title: "Reliable Scheduling", desc: "We show up when we say we will. Recurring service available weekly, bi-weekly, or monthly." },

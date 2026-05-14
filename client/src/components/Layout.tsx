@@ -271,6 +271,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {/* Bottom bar */}
           <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
             <p>© {new Date().getFullYear()} Next Level Window Cleaning. All rights reserved. Sanford, NC.</p>
+            <div className="flex gap-4">
+              <Link href="/privacy"><span className="hover:text-white transition-colors cursor-pointer">Privacy Policy</span></Link>
+              <Link href="/terms"><span className="hover:text-white transition-colors cursor-pointer">Terms of Service</span></Link>
+            </div>
             <p>Serving Sanford · Cameron · Spring Lake · Broadway, NC</p>
           </div>
         </div>

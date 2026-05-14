@@ -2,6 +2,7 @@ import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone } from "lucide-react";
 import { SOFT_WASHING_HERO } from "@/config/images";
@@ -38,6 +39,12 @@ export default function ResidentialSoftWashing() {
   );
   return (
     <Layout>
+      <ServiceSchema 
+        name="Residential Soft Washing" 
+        description="Safe, low-pressure soft washing for roofs, siding, and delicate surfaces in Sanford, NC. Removes algae, mold, and mildew without damage." 
+        url="/residential/soft-washing" 
+      />
+      <BreadcrumbSchema items={[{"name":"Home","url":"/"},{"name":"Residential","url":"/residential"},{"name":"Soft Washing","url":"/residential/soft-washing"}]} />
       <section className="relative min-h-[380px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={HERO_IMG} alt="Soft washing Sanford NC" className="w-full h-full object-cover" />

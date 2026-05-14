@@ -3,6 +3,7 @@ import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone } from "lucide-react";
 import { PRESSURE_WASHING_HERO } from "@/config/images";
@@ -40,6 +41,12 @@ export default function ResidentialPressureWashing() {
   );
   return (
     <Layout>
+      <ServiceSchema 
+        name="Residential Pressure Washing" 
+        description="Professional pressure washing for driveways, sidewalks, decks, and fences in Sanford and Lee County, NC. Locally owned, fully insured." 
+        url="/residential/pressure-washing" 
+      />
+      <BreadcrumbSchema items={[{"name":"Home","url":"/"},{"name":"Residential","url":"/residential"},{"name":"Pressure Washing","url":"/residential/pressure-washing"}]} />
       <section className="relative min-h-[380px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={PRESSURE_WASHING_HERO} alt="Pressure washing Sanford NC" className="w-full h-full object-cover" />

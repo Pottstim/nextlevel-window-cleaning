@@ -2,6 +2,7 @@
 import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import CTASection from "@/components/CTASection";
 import { ArrowRight, Phone, Sparkles, Droplets, Wind, Lightbulb } from "lucide-react";
 import { GALLERY } from "@/config/images";
@@ -26,6 +27,12 @@ export default function Residential() {
   );
   return (
     <Layout>
+      <ServiceSchema 
+        name="Residential Exterior Cleaning" 
+        description="Window cleaning, pressure washing, soft washing, gutter cleaning, and Christmas lights for Sanford-area homeowners. Free estimates." 
+        url="/residential" 
+      />
+      <BreadcrumbSchema items={[{"name":"Home","url":"/"},{"name":"Residential","url":"/residential"}]} />
       <section className="relative min-h-[380px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={HERO_IMG} alt="Residential exterior cleaning Sanford NC" className="w-full h-full object-cover" />

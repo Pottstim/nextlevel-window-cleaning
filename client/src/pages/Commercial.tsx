@@ -4,6 +4,7 @@ import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone, Building2, Calendar, Shield, FileText, Clock } from "lucide-react";
 import { COMMERCIAL_HERO } from "@/config/images";
@@ -47,6 +48,12 @@ export default function Commercial() {
   );
   return (
     <Layout>
+      <ServiceSchema 
+        name="Commercial Exterior Cleaning" 
+        description="Reliable commercial exterior cleaning in Sanford, NC. Keep your storefront or business looking professional with our window and pressure washing services." 
+        url="/commercial" 
+      />
+      <BreadcrumbSchema items={[{"name":"Home","url":"/"},{"name":"Commercial","url":"/commercial"}]} />
       <section className="relative min-h-[420px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={COMMERCIAL_HERO} alt="Commercial window cleaning Sanford NC" className="w-full h-full object-cover" />

@@ -18,6 +18,8 @@ import ResidentialChristmasLights from "./pages/ResidentialChristmasLights";
 import Commercial from "./pages/Commercial";
 import ServiceAreas from "./pages/ServiceAreas";
 import SanfordNC from "./pages/SanfordNC";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 function Router() {
   return (
@@ -36,6 +38,8 @@ function Router() {
       <Route path="/commercial" component={Commercial} />
       <Route path="/service-areas" component={ServiceAreas} />
       <Route path="/service-areas/sanford-nc" component={SanfordNC} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

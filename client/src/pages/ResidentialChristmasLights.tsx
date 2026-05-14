@@ -3,6 +3,7 @@
 import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import CTASection from "@/components/CTASection";
 import BeforeAfter from "@/components/BeforeAfter";
 import { CheckCircle, ArrowRight, Phone, Lightbulb, Star } from "lucide-react";
@@ -38,6 +39,12 @@ export default function ResidentialChristmasLights() {
   );
   return (
     <Layout>
+      <ServiceSchema 
+        name="Christmas Light Installation" 
+        description="Professional holiday light installation and takedown for homes in Sanford and Lee County, NC. Stress-free, beautiful results every time." 
+        url="/residential/christmas-lights" 
+      />
+      <BreadcrumbSchema items={[{"name":"Home","url":"/"},{"name":"Residential","url":"/residential"},{"name":"Christmas Lights","url":"/residential/christmas-lights"}]} />
       {/* ── HERO ── */}
       <section className="relative min-h-[420px] flex items-center overflow-hidden">
         <div className="absolute inset-0">

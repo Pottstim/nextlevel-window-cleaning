@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { SchemaMarkup } from "@/components/SchemaMarkup";
 
 // Phone number with local NC area code
 const PHONE = "(323) 485-1020";
@@ -62,8 +63,23 @@ export default function FAQ() {
     "Answers to common questions about window cleaning, pressure washing, and exterior services in Sanford, NC. Locally owned and fully insured.",
     "/faq"
   );
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.flatMap(category => category.items).map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  };
+
   return (
     <Layout>
+      <SchemaMarkup schema={faqSchema} />
       <section className="py-12 bg-sky-tint border-b border-gray-200">
         <div className="container max-w-2xl text-center">
           <nav className="text-gray-400 text-xs mb-4 flex items-center justify-center gap-1.5" style={{ fontFamily: 'Manrope, sans-serif' }}>

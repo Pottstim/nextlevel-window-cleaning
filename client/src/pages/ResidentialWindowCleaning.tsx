@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone } from "lucide-react";
 import { RESIDENTIAL_WINDOW_CLEANING_HERO } from "@/config/images";
+import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 
 const HERO_IMG = RESIDENTIAL_WINDOW_CLEANING_HERO;
 
@@ -50,6 +51,16 @@ export default function ResidentialWindowCleaning() {
   );
   return (
     <Layout>
+      <ServiceSchema 
+        name="Residential Window Cleaning" 
+        description="Professional residential window cleaning in Sanford and the Sandhills. We safely remove NC pollen, dirt, and grime for streak-free glass." 
+        url="/residential/window-cleaning" 
+      />
+      <BreadcrumbSchema items={[
+        { name: "Home", url: "/" },
+        { name: "Residential", url: "/residential" },
+        { name: "Window Cleaning", url: "/residential/window-cleaning" }
+      ]} />
       {/* Hero */}
       <section className="relative min-h-[380px] flex items-center overflow-hidden">
         <div className="absolute inset-0">

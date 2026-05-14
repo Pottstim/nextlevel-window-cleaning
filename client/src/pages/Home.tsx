@@ -16,6 +16,7 @@ import {
 import { 
   HERO_GENERATED, GALLERY, RESIDENTIAL_WINDOW_CLEANING_HERO 
 } from "@/config/images";
+import { SchemaMarkup } from "@/components/SchemaMarkup";
 
 // Real job photos from Next Level Window Cleaning
 const HERO_IMG = HERO_GENERATED;
@@ -144,8 +145,32 @@ export default function Home() {
     "/"
   );
 
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://nextlevelwindowsnc.com/#business",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": testimonials.length.toString()
+    },
+    "review": testimonials.map(t => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": t.name
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": t.rating.toString()
+      },
+      "reviewBody": t.text
+    }))
+  };
+
   return (
     <Layout>
+      <SchemaMarkup schema={reviewSchema} />
       {/* ── 1. HERO ── */}
       <section className="relative min-h-[580px] lg:min-h-[680px] flex items-center overflow-hidden">
         {/* Background image */}

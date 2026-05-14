@@ -1,77 +1,23 @@
 /**
- * GOOGLE MAPS FRONTEND INTEGRATION - ESSENTIAL GUIDE
- *
+ * GOOGLE MAPS COMPONENT — Next Level Window Cleaning
+ * 
+ * Loads Google Maps directly using your own API key.
+ * 
+ * SETUP:
+ * 1. Get a Google Maps API key from https://console.cloud.google.com/apis/credentials
+ * 2. Enable "Maps JavaScript API" in your Google Cloud project
+ * 3. Set VITE_GOOGLE_MAPS_API_KEY in Cloudflare Pages environment variables
+ * 
  * USAGE FROM PARENT COMPONENT:
- * ======
- *
  * const mapRef = useRef<google.maps.Map | null>(null);
  *
  * <MapView
- *   initialCenter={{ lat: 40.7128, lng: -74.0060 }}
- *   initialZoom={15}
+ *   initialCenter={{ lat: 35.4795, lng: -79.1797 }}  // Sanford, NC
+ *   initialZoom={13}
  *   onMapReady={(map) => {
- *     mapRef.current = map; // Store to control map from parent anytime, google map itself is in charge of the re-rendering, not react state.
- * </MapView>
- *
- * ======
- * Available Libraries and Core Features:
- * -------------------------------
- * 📍 MARKER (from `marker` library)
- * - Attaches to map using { map, position }
- * new google.maps.marker.AdvancedMarkerElement({
- *   map,
- *   position: { lat: 37.7749, lng: -122.4194 },
- *   title: "San Francisco",
- * });
- *
- * -------------------------------
- * 🏢 PLACES (from `places` library)
- * - Does not attach directly to map; use data with your map manually.
- * const place = new google.maps.places.Place({ id: PLACE_ID });
- * await place.fetchFields({ fields: ["displayName", "location"] });
- * map.setCenter(place.location);
- * new google.maps.marker.AdvancedMarkerElement({ map, position: place.location });
- *
- * -------------------------------
- * 🧭 GEOCODER (from `geocoding` library)
- * - Standalone service; manually apply results to map.
- * const geocoder = new google.maps.Geocoder();
- * geocoder.geocode({ address: "New York" }, (results, status) => {
- *   if (status === "OK" && results[0]) {
- *     map.setCenter(results[0].geometry.location);
- *     new google.maps.marker.AdvancedMarkerElement({
- *       map,
- *       position: results[0].geometry.location,
- *     });
- *   }
- * });
- *
- * -------------------------------
- * 📐 GEOMETRY (from `geometry` library)
- * - Pure utility functions; not attached to map.
- * const dist = google.maps.geometry.spherical.computeDistanceBetween(p1, p2);
- *
- * -------------------------------
- * 🛣️ ROUTES (from `routes` library)
- * - Combines DirectionsService (standalone) + DirectionsRenderer (map-attached)
- * const directionsService = new google.maps.DirectionsService();
- * const directionsRenderer = new google.maps.DirectionsRenderer({ map });
- * directionsService.route(
- *   { origin, destination, travelMode: "DRIVING" },
- *   (res, status) => status === "OK" && directionsRenderer.setDirections(res)
- * );
- *
- * -------------------------------
- * 🌦️ MAP LAYERS (attach directly to map)
- * - new google.maps.TrafficLayer().setMap(map);
- * - new google.maps.TransitLayer().setMap(map);
- * - new google.maps.BicyclingLayer().setMap(map);
- *
- * -------------------------------
- * ✅ SUMMARY
- * - “map-attached” → AdvancedMarkerElement, DirectionsRenderer, Layers.
- * - “standalone” → Geocoder, DirectionsService, DistanceMatrixService, ElevationService.
- * - “data-only” → Place, Geometry utilities.
+ *     mapRef.current = map;
+ *   }}
+ * />
  */
 
 /// <reference types="@types/google.maps" />
@@ -83,27 +29,56 @@ import { cn } from "@/lib/utils";
 declare global {
   interface Window {
     google?: typeof google;
+    initGoogleMaps?: () => void;
   }
 }
 
-const API_KEY = import.meta.env.VITE_FRONTEND_FORGE_API_KEY;
-const FORGE_BASE_URL =
-  import.meta.env.VITE_FRONTEND_FORGE_API_URL ||
-  "https://forge.butterfly-effect.dev";
-const MAPS_PROXY_URL = `${FORGE_BASE_URL}/v1/maps/proxy`;
+const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "";
 
-function loadMapScript() {
-  return new Promise(resolve => {
-    const script = document.createElement("script");
-    script.src = `${MAPS_PROXY_URL}/maps/api/js?key=${API_KEY}&v=weekly&libraries=marker,places,geocoding,geometry`;
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    script.onload = () => {
-      resolve(null);
-      script.remove(); // Clean up immediately
+// Track if script is loading/loaded
+let isLoading = false;
+let isLoaded = false;
+const callbacks: Array<() => void> = [];
+
+function loadGoogleMapsScript(): Promise<void> {
+  return new Promise((resolve, reject) => {
+    // Already loaded
+    if (isLoaded && window.google?.maps) {
+      resolve();
+      return;
+    }
+
+    // Currently loading - wait for it
+    if (isLoading) {
+      callbacks.push(() => resolve());
+      return;
+    }
+
+    if (!API_KEY) {
+      console.error("VITE_GOOGLE_MAPS_API_KEY is not set");
+      reject(new Error("Google Maps API key not configured"));
+      return;
+    }
+
+    isLoading = true;
+
+    // Create a unique callback name
+    const callbackName = "initGoogleMaps";
+    window[callbackName] = () => {
+      isLoaded = true;
+      isLoading = false;
+      callbacks.forEach(cb => cb());
+      callbacks.length = 0;
+      resolve();
     };
+
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&v=weekly&libraries=marker,places,geocoding&callback=${callbackName}`;
+    script.async = true;
+    script.defer = true;
     script.onerror = () => {
-      console.error("Failed to load Google Maps script");
+      isLoading = false;
+      reject(new Error("Failed to load Google Maps"));
     };
     document.head.appendChild(script);
   });
@@ -114,34 +89,59 @@ interface MapViewProps {
   initialCenter?: google.maps.LatLngLiteral;
   initialZoom?: number;
   onMapReady?: (map: google.maps.Map) => void;
+  /** Optional: Add a marker at this location */
+  markerPosition?: google.maps.LatLngLiteral;
+  /** Optional: Marker title */
+  markerTitle?: string;
 }
 
 export function MapView({
   className,
-  initialCenter = { lat: 37.7749, lng: -122.4194 },
-  initialZoom = 12,
+  initialCenter = { lat: 35.4795, lng: -79.1797 }, // Sanford, NC
+  initialZoom = 13,
   onMapReady,
+  markerPosition,
+  markerTitle = "Next Level Window Cleaning",
 }: MapViewProps) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<google.maps.Map | null>(null);
+  const marker = useRef<google.maps.marker.AdvancedMarkerElement | null>(null);
 
   const init = usePersistFn(async () => {
-    await loadMapScript();
-    if (!mapContainer.current) {
-      console.error("Map container not found");
-      return;
-    }
-    map.current = new window.google.maps.Map(mapContainer.current, {
-      zoom: initialZoom,
-      center: initialCenter,
-      mapTypeControl: true,
-      fullscreenControl: true,
-      zoomControl: true,
-      streetViewControl: true,
-      mapId: "DEMO_MAP_ID",
-    });
-    if (onMapReady) {
-      onMapReady(map.current);
+    try {
+      await loadGoogleMapsScript();
+      
+      if (!mapContainer.current) {
+        console.error("Map container not found");
+        return;
+      }
+
+      // Create map
+      map.current = new window.google.maps.Map(mapContainer.current, {
+        zoom: initialZoom,
+        center: initialCenter,
+        mapTypeControl: true,
+        fullscreenControl: true,
+        zoomControl: true,
+        streetViewControl: true,
+        mapId: "next_level_windows_map",
+      });
+
+      // Add marker if position provided
+      if (markerPosition && window.google.maps.marker) {
+        const { AdvancedMarkerElement } = window.google.maps.marker;
+        marker.current = new AdvancedMarkerElement({
+          map: map.current,
+          position: markerPosition,
+          title: markerTitle,
+        });
+      }
+
+      if (onMapReady) {
+        onMapReady(map.current);
+      }
+    } catch (err) {
+      console.error("Failed to initialize map:", err);
     }
   });
 

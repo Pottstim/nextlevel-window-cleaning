@@ -6,7 +6,7 @@
 const CDN_BASE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35";
 
 // Logo
-export const LOGO_URL = `${CDN_BASE}/nextlevel-logo_ee9ca002.png`;
+export const LOGO_URL = "/logo.jpg";
 
 // Hero images
 export const HERO_WINDOW_CLEANING = `${CDN_BASE}/hero-window-cleaning-bd4k27QyRUkKtJYTJxskGD.webp`;

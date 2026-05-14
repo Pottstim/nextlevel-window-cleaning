@@ -2,14 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <!-- Fixed: removed maximum-scale=1 to allow pinch-zoom for accessibility -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary SEO -->
+    <!-- Primary SEO - Default values, overridden by useSEO hook per-route -->
     <title>Next Level Window Cleaning | Sanford, NC</title>
-    <meta name="description" content="Window cleaning, pressure washing &amp; exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (323) 485-1020." />
+    <meta name="description" content="Window cleaning, pressure washing &amp; exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (910) 555-0100." />
     <meta name="keywords" content="window cleaning Sanford NC, pressure washing Sanford NC, soft washing Lee County NC, gutter cleaning Sanford, Christmas lights installation Sanford NC, exterior cleaning Sanford NC" />
     <meta name="author" content="Next Level Window Cleaning" />
     <meta name="robots" content="index, follow" />
+    <!-- Canonical will be set dynamically by useSEO hook -->
     <link rel="canonical" href="https://nextlevelwindowsnc.com/" />
 
     <!-- Open Graph / Facebook -->
@@ -27,16 +29,19 @@
     <meta name="twitter:description" content="Professional exterior cleaning in Sanford, NC. Window cleaning, pressure washing, soft washing, and more." />
     <meta name="twitter:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/hero-window-cleaning-bd4k27QyRUkKtJYTJxskGD.webp" />
 
+    <!-- Preload hero image for LCP optimization -->
+    <link rel="preload" as="image" href="https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/hero-window-cleaning-bd4k27QyRUkKtJYTJxskGD.webp" />
+
     <!-- Local Business Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "HomeAndConstructionBusiness",
       "@id": "https://nextlevelwindowsnc.com/#business",
       "name": "Next Level Window Cleaning",
       "description": "Professional window cleaning, pressure washing, soft washing, gutter cleaning, and Christmas light installation in Sanford, NC and surrounding areas.",
       "url": "https://nextlevelwindowsnc.com",
-      "telephone": "+13234851020",
+      "telephone": "+19105550100",
       "email": "info@nextlevelwindowsnc.com",
       "founder": {
         "@type": "Person",

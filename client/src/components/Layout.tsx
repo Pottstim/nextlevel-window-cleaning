@@ -8,11 +8,12 @@ import {
   Phone, Menu, X, ChevronDown, MapPin, Mail, Facebook,
   Shield, Star, Clock
 } from "lucide-react";
+import { LOGO_URL } from "@/config/images";
 
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+// Using local NC area code (910) for Sanford - update with actual number
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
 const FB_URL = "https://www.facebook.com/people/Next-Level-Window-Cleaning/61579913446585/";
-const LOGO_URL = "/manus-storage/nextlevel-logo_ee9ca002.png";
 
 const navItems = [
   { label: "Home", href: "/" },

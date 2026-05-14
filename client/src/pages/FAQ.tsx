@@ -6,6 +6,10 @@ import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
+
 const faqs = [
   { category: "About the Business", items: [
     { q: "Are you insured?", a: "Yes. Next Level Window Cleaning carries full liability insurance on every job. We can provide a certificate of insurance for commercial clients or property managers upon request." },
@@ -55,7 +59,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function FAQ() {
   useSEO(
     "FAQs | Next Level Window Cleaning Sanford, NC",
-    "Answers to common questions about window cleaning, pressure washing, and exterior services in Sanford, NC. Locally owned and fully insured."
+    "Answers to common questions about window cleaning, pressure washing, and exterior services in Sanford, NC. Locally owned and fully insured.",
+    "/faq"
   );
   return (
     <Layout>
@@ -66,7 +71,7 @@ export default function FAQ() {
             <span className="text-gray-600">FAQ</span>
           </nav>
           <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3" style={{ fontFamily: 'Manrope, sans-serif' }}>Frequently Asked Questions</h1>
-          <p className="text-gray-600">Answers to the questions we hear most often. Don't see yours? <a href="tel:3234851020" className="font-semibold" style={{ color: 'var(--brand-aqua)' }}>Give us a call.</a></p>
+          <p className="text-gray-600">Answers to the questions we hear most often. Don't see yours? <a href={PHONE_HREF} className="font-semibold" style={{ color: 'var(--brand-aqua)' }}>Give us a call.</a></p>
         </div>
       </section>
 

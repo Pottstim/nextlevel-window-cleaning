@@ -6,7 +6,12 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone, Building2, Calendar, Shield, FileText, Clock } from "lucide-react";
-const COMMERCIAL_IMG = "/manus-storage/gallery_06_ec82e12a.jpg";
+import { COMMERCIAL_HERO } from "@/config/images";
+
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
+
 const reasons = [
   { icon: Calendar, title: "Reliable Scheduling", desc: "We show up when we say we will. Recurring service available weekly, bi-weekly, or monthly." },
   { icon: Shield, title: "Fully Insured", desc: "We carry full liability insurance. You can add us as additionally insured if required." },
@@ -37,13 +42,14 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function Commercial() {
   useSEO(
     "Commercial Window & Exterior Cleaning Sanford, NC | Next Level",
-    "Reliable commercial exterior cleaning in Sanford, NC. Keep your storefront or business looking professional with our window and pressure washing services."
+    "Reliable commercial exterior cleaning in Sanford, NC. Keep your storefront or business looking professional with our window and pressure washing services.",
+    "/commercial"
   );
   return (
     <Layout>
       <section className="relative min-h-[420px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={COMMERCIAL_IMG} alt="Commercial window cleaning Sanford NC" className="w-full h-full object-cover" />
+          <img src={COMMERCIAL_HERO} alt="Commercial window cleaning Sanford NC" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(10,20,40,0.80) 0%, rgba(10,20,40,0.5) 60%, transparent 100%)' }} />
         </div>
         <div className="container relative z-10 py-16">
@@ -59,7 +65,7 @@ export default function Commercial() {
           <p className="text-white/85 text-lg mb-6 max-w-xl">Reliable, insured, professional exterior cleaning for storefronts, offices, restaurants, and property managers.</p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link href="/get-a-free-estimate"><span className="btn-coral text-base px-7 py-3.5">Request a Commercial Bid <ArrowRight size={16} /></span></Link>
-            <a href="tel:3234851020" className="btn-outline-white text-base px-7 py-3.5"><Phone size={16} /> (323) 485-1020</a>
+            <a href={PHONE_HREF} className="btn-outline-white text-base px-7 py-3.5"><Phone size={16} /> {PHONE}</a>
           </div>
         </div>
       </section>
@@ -108,7 +114,7 @@ export default function Commercial() {
               <p className="text-gray-600 text-sm leading-relaxed mb-5">Fill out our commercial bid form and we'll get back to you the same day. Or give us a call — we're easy to reach.</p>
               <div className="flex flex-col gap-3">
                 <Link href="/get-a-free-estimate"><span className="btn-coral w-full justify-center">Request a Commercial Bid <ArrowRight size={15} /></span></Link>
-                <a href="tel:3234851020" className="btn-primary w-full justify-center"><Phone size={15} /> (323) 485-1020</a>
+                <a href={PHONE_HREF} className="btn-primary w-full justify-center"><Phone size={15} /> {PHONE}</a>
               </div>
             </div>
           </div>

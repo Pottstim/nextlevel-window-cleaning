@@ -5,8 +5,11 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone } from "lucide-react";
+import { PRESSURE_WASHING_HERO } from "@/config/images";
 
-const PRESSURE_IMG = "/manus-storage/gallery_11_ad03b31d.jpg";
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
 
 const surfaces = ["Driveways & Sidewalks","Patios & Decks","Siding & Brick","Fences","Garage Floors","Retaining Walls"];
 const faqs = [
@@ -32,13 +35,14 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function ResidentialPressureWashing() {
   useSEO(
     "Pressure Washing in Sanford, NC | Next Level Window Cleaning",
-    "Professional pressure washing for driveways, sidewalks, decks, and fences in Sanford and Lee County, NC. Locally owned, fully insured."
+    "Professional pressure washing for driveways, sidewalks, decks, and fences in Sanford and Lee County, NC. Locally owned, fully insured.",
+    "/residential/pressure-washing"
   );
   return (
     <Layout>
       <section className="relative min-h-[380px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={PRESSURE_IMG} alt="Pressure washing Sanford NC" className="w-full h-full object-cover" />
+          <img src={PRESSURE_WASHING_HERO} alt="Pressure washing Sanford NC" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(10,20,40,0.75) 0%, rgba(10,20,40,0.4) 60%, transparent 100%)' }} />
         </div>
         <div className="container relative z-10 py-16">
@@ -57,7 +61,7 @@ export default function ResidentialPressureWashing() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link href="/get-a-free-estimate"><span className="btn-coral">Get a Free Estimate <ArrowRight size={16} /></span></Link>
-            <a href="tel:3234851020" className="btn-outline-white"><Phone size={16} /> (323) 485-1020</a>
+            <a href={PHONE_HREF} className="btn-outline-white"><Phone size={16} /> {PHONE}</a>
           </div>
         </div>
       </section>

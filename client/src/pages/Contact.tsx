@@ -14,6 +14,10 @@ import { Phone, Mail, MapPin, Clock, CheckCircle, Facebook, Loader2 } from "luci
 const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
 // ─────────────────────────────────────────────────────────────────────────────
 
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
+
 function SuccessMessage() {
   return (
     <div className="text-center py-10">
@@ -21,7 +25,7 @@ function SuccessMessage() {
         <CheckCircle size={28} className="text-green-500" />
       </div>
       <h3 className="text-xl font-extrabold text-gray-900 mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>Message Sent!</h3>
-      <p className="text-gray-600 text-sm">We'll get back to you the same day. You can also reach us at <a href="tel:3234851020" className="font-semibold" style={{ color: 'var(--brand-aqua)' }}>(323) 485-1020</a>.</p>
+      <p className="text-gray-600 text-sm">We'll get back to you the same day. You can also reach us at <a href={PHONE_HREF} className="font-semibold" style={{ color: 'var(--brand-aqua)' }}>{PHONE}</a>.</p>
     </div>
   );
 }
@@ -29,7 +33,8 @@ function SuccessMessage() {
 export default function Contact() {
   useSEO(
     "Contact Us | Next Level Window Cleaning in Sanford, NC",
-    "Get a free exterior cleaning estimate. Call or message our team for window washing, gutter cleaning, and pressure washing in the Sandhills."
+    "Get a free exterior cleaning estimate. Call or message our team for window washing, gutter cleaning, and pressure washing in the Sandhills.",
+    "/contact"
   );
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -62,10 +67,10 @@ export default function Contact() {
       if (data.success) {
         setSubmitted(true);
       } else {
-        setError("Something went wrong. Please call us at (323) 485-1020.");
+        setError(`Something went wrong. Please call us at ${PHONE}.`);
       }
     } catch {
-      setError("Network error. Please call us at (323) 485-1020.");
+      setError(`Network error. Please call us at ${PHONE}.`);
     } finally {
       setLoading(false);
     }
@@ -97,7 +102,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-bold text-gray-900 text-sm mb-0.5" style={{ fontFamily: 'Manrope, sans-serif' }}>Phone / Text</p>
-                    <a href="tel:3234851020" className="text-gray-600 hover:text-gray-900 transition-colors">(323) 485-1020</a>
+                    <a href={PHONE_HREF} className="text-gray-600 hover:text-gray-900 transition-colors">{PHONE}</a>
                     <p className="text-xs text-gray-400 mt-0.5">Call or text anytime</p>
                   </div>
                 </div>

@@ -6,10 +6,13 @@ import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import BeforeAfter from "@/components/BeforeAfter";
 import { CheckCircle, ArrowRight, Phone, Lightbulb, Star } from "lucide-react";
+import { CHRISTMAS_LIGHTS, BEFORE_AFTER } from "@/config/images";
 
-const HERO_IMG = "/manus-storage/christmas-lights_14661dc9.jpg";
-const BEFORE_IMG = "/manus-storage/before-after-after_faba211b.jpg";
-const AFTER_IMG = "/manus-storage/before-after-before_2bea0ebd.jpg";
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
+
+const HERO_IMG = CHRISTMAS_LIGHTS;
 
 const services = [
   "Professional installation on rooflines, trees, and shrubs",
@@ -30,7 +33,8 @@ const steps = [
 export default function ResidentialChristmasLights() {
   useSEO(
     "Christmas Light Installation in Sanford, NC | Next Level",
-    "Professional holiday light installation and takedown for homes in Sanford and Lee County, NC. Stress-free, beautiful results every time."
+    "Professional holiday light installation and takedown for homes in Sanford and Lee County, NC. Stress-free, beautiful results every time.",
+    "/residential/christmas-lights"
   );
   return (
     <Layout>
@@ -71,8 +75,8 @@ export default function ResidentialChristmasLights() {
             <Link href="/get-a-free-estimate">
               <span className="btn-coral">Get a Free Estimate <ArrowRight size={16} /></span>
             </Link>
-            <a href="tel:3234851020" className="btn-outline-white">
-              <Phone size={16} /> (323) 485-1020
+            <a href={PHONE_HREF} className="btn-outline-white">
+              <Phone size={16} /> {PHONE}
             </a>
           </div>
         </div>
@@ -118,8 +122,8 @@ export default function ResidentialChristmasLights() {
             {/* Before/After slider */}
             <div>
               <BeforeAfter
-                beforeSrc={BEFORE_IMG}
-                afterSrc={AFTER_IMG}
+                beforeSrc={BEFORE_AFTER.before}
+                afterSrc={BEFORE_AFTER.after}
                 beforeLabel="Before"
                 afterLabel="After"
                 alt="Christmas light installation before and after Sanford NC"

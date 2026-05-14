@@ -4,9 +4,11 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { Shield, Star, MapPin, CheckCircle, Phone, ArrowRight } from "lucide-react";
+import { ABOUT_HERO, ABOUT_DECK_RAILS } from "@/config/images";
 
-const ABOUT_IMG = "/manus-storage/gallery_10_5b1362dd.jpg"; // Adam cleaning deck rails
-const HERO_IMG = "/manus-storage/gallery_01_9f404602.jpg";  // Residential window cleaning
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
 
 const values = [
   { icon: Shield, title: "Fully Insured", desc: "We carry full liability insurance on every job. You're protected." },
@@ -18,14 +20,15 @@ const values = [
 export default function About() {
   useSEO(
     "About Next Level Window Cleaning | Sanford, NC",
-    "Meet Adam Griffith and the Next Level Window Cleaning team. Locally owned, fully insured, serving Sanford and Lee County, NC."
+    "Meet Adam Griffith and the Next Level Window Cleaning team. Locally owned, fully insured, serving Sanford and Lee County, NC.",
+    "/about"
   );
   return (
     <Layout>
       {/* Hero */}
       <section className="relative min-h-[340px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="About Next Level Window Cleaning" className="w-full h-full object-cover" />
+          <img src={ABOUT_HERO} alt="About Next Level Window Cleaning" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(10,20,40,0.78) 0%, rgba(10,20,40,0.4) 60%, transparent 100%)' }} />
         </div>
         <div className="container relative z-10 py-14">
@@ -51,7 +54,7 @@ export default function About() {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl aspect-square lg:aspect-auto lg:h-80">
-              <img src={ABOUT_IMG} alt="Adam Griffith — Owner, Next Level Window Cleaning" className="w-full h-full object-cover" />
+              <img src={ABOUT_DECK_RAILS} alt="Adam Griffith — Owner, Next Level Window Cleaning" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -84,7 +87,7 @@ export default function About() {
           <p className="text-gray-600 leading-relaxed mb-6">We're proud to serve homeowners and businesses throughout Sanford, Cameron, Spring Lake, Broadway, and surrounding communities in Lee County, NC.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/get-a-free-estimate"><span className="btn-primary">Get a Free Estimate <ArrowRight size={16} /></span></Link>
-            <a href="tel:3234851020" className="btn-coral"><Phone size={16} /> (323) 485-1020</a>
+            <a href={PHONE_HREF} className="btn-coral"><Phone size={16} /> {PHONE}</a>
           </div>
         </div>
       </section>

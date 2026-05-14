@@ -13,11 +13,18 @@ import {
   MapPin, ChevronDown, ChevronUp, Home as HomeIcon, Building2,
   Sparkles, Droplets, Lightbulb, Wind
 } from "lucide-react";
+import { 
+  HERO_GENERATED, GALLERY, RESIDENTIAL_WINDOW_CLEANING_HERO 
+} from "@/config/images";
 
 // Real job photos from Next Level Window Cleaning
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663053588823/2Q9vFKpYTpE7ehgtZMKV35/hero-generated-v1-n8YeMmynmW4YiJFzATdXJt.webp"; // Generated wide hero — soft-wash action, golden hour, NC suburban home
-const COMMERCIAL_IMG = "/manus-storage/gallery_02_f1eae76f.jpg"; // Exterior house washing
-const PRESSURE_IMG = "/manus-storage/gallery_10_5b1362dd.jpg";   // Deck rail cleaning close-up
+const HERO_IMG = HERO_GENERATED;
+const COMMERCIAL_IMG = GALLERY.gallery_02;
+const PRESSURE_IMG = GALLERY.gallery_10;
+
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
 
 const trustItems = [
   { icon: Shield, label: "Fully Insured" },
@@ -133,7 +140,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function Home() {
   useSEO(
     "Next Level Window Cleaning | Sanford, NC",
-    "Window cleaning, pressure washing & exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (323) 485-1020."
+    "Window cleaning, pressure washing & exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (910) 555-0100.",
+    "/"
   );
 
   return (
@@ -168,8 +176,8 @@ export default function Home() {
                   <ArrowRight size={18} /> Get a Free Estimate
                 </span>
               </Link>
-              <a href="tel:3234851020" className="btn-outline-white text-base px-7 py-3.5">
-                <Phone size={18} /> (323) 485-1020
+              <a href={PHONE_HREF} className="btn-outline-white text-base px-7 py-3.5">
+                <Phone size={18} /> {PHONE}
               </a>
             </div>
             <div className="mt-6 flex flex-wrap gap-4">

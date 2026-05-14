@@ -5,8 +5,13 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone } from "lucide-react";
+import { RESIDENTIAL_WINDOW_CLEANING_HERO } from "@/config/images";
 
-const HERO_IMG = "/manus-storage/gallery_08_50371040.jpg";
+const HERO_IMG = RESIDENTIAL_WINDOW_CLEANING_HERO;
+
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
 
 const benefits = [
   "Better natural light inside your home",
@@ -40,7 +45,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function ResidentialWindowCleaning() {
   useSEO(
     "Residential Window Cleaning in Sanford, NC | Next Level",
-    "Professional residential window cleaning in Sanford and the Sandhills. We safely remove NC pollen, dirt, and grime for streak-free glass."
+    "Professional residential window cleaning in Sanford and the Sandhills. We safely remove NC pollen, dirt, and grime for streak-free glass.",
+    "/residential/window-cleaning"
   );
   return (
     <Layout>
@@ -66,7 +72,7 @@ export default function ResidentialWindowCleaning() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link href="/get-a-free-estimate"><span className="btn-coral">Get a Free Estimate <ArrowRight size={16} /></span></Link>
-            <a href="tel:3234851020" className="btn-outline-white"><Phone size={16} /> (323) 485-1020</a>
+            <a href={PHONE_HREF} className="btn-outline-white"><Phone size={16} /> {PHONE}</a>
           </div>
         </div>
       </section>

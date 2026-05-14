@@ -4,7 +4,14 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone } from "lucide-react";
-const HERO_IMG = "/manus-storage/gallery_09_8d96bd3c.jpg";
+import { SOFT_WASHING_HERO } from "@/config/images";
+
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
+
+const HERO_IMG = SOFT_WASHING_HERO;
+
 const surfaces = ["Roof Shingles","Vinyl Siding","Stucco","Wood Siding","Painted Surfaces","Gutters & Fascia"];
 const faqs = [
   { q: "What is soft washing?", a: "Soft washing uses low-pressure water combined with biodegradable cleaning solutions to safely remove algae, mold, mildew, and stains from delicate surfaces that would be damaged by high-pressure washing." },
@@ -26,7 +33,8 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function ResidentialSoftWashing() {
   useSEO(
     "Soft Washing in Sanford, NC | Next Level Window Cleaning",
-    "Safe, low-pressure soft washing for roofs, siding, and delicate surfaces in Sanford, NC. Removes algae, mold, and mildew without damage."
+    "Safe, low-pressure soft washing for roofs, siding, and delicate surfaces in Sanford, NC. Removes algae, mold, and mildew without damage.",
+    "/residential/soft-washing"
   );
   return (
     <Layout>
@@ -45,7 +53,7 @@ export default function ResidentialSoftWashing() {
           <p className="text-white/85 text-lg mb-6 max-w-lg">Safe, low-pressure exterior cleaning for roofs, siding, and delicate surfaces.</p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link href="/get-a-free-estimate"><span className="btn-coral">Get a Free Estimate <ArrowRight size={16} /></span></Link>
-            <a href="tel:3234851020" className="btn-outline-white"><Phone size={16} /> (323) 485-1020</a>
+            <a href={PHONE_HREF} className="btn-outline-white"><Phone size={16} /> {PHONE}</a>
           </div>
         </div>
       </section>

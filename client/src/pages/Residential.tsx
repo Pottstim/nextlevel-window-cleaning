@@ -4,7 +4,14 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { ArrowRight, Phone, Sparkles, Droplets, Wind, Lightbulb } from "lucide-react";
-const HERO_IMG = "/manus-storage/gallery_01_9f404602.jpg";
+import { GALLERY } from "@/config/images";
+
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
+
+const HERO_IMG = GALLERY.gallery_01;
+
 const services = [
   { icon: Sparkles, title: "Window Cleaning", desc: "Interior and exterior window cleaning for homes of all sizes. Streak-free results every time.", href: "/residential/window-cleaning" },
   { icon: Droplets, title: "Pressure Washing", desc: "Driveways, patios, siding, decks — we remove years of buildup fast.", href: "/residential/pressure-washing" },
@@ -14,7 +21,8 @@ const services = [
 export default function Residential() {
   useSEO(
     "Residential Exterior Cleaning in Sanford, NC | Next Level",
-    "Window cleaning, pressure washing, soft washing, gutter cleaning, and Christmas lights for Sanford-area homeowners. Free estimates."
+    "Window cleaning, pressure washing, soft washing, gutter cleaning, and Christmas lights for Sanford-area homeowners. Free estimates.",
+    "/residential"
   );
   return (
     <Layout>
@@ -32,7 +40,7 @@ export default function Residential() {
           <p className="text-white/85 text-lg mb-6 max-w-lg">Window cleaning, pressure washing, soft washing, and holiday lights — all from one locally owned, fully insured team.</p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link href="/get-a-free-estimate"><span className="btn-coral">Get a Free Estimate <ArrowRight size={16} /></span></Link>
-            <a href="tel:3234851020" className="btn-outline-white"><Phone size={16} /> (323) 485-1020</a>
+            <a href={PHONE_HREF} className="btn-outline-white"><Phone size={16} /> {PHONE}</a>
           </div>
         </div>
       </section>

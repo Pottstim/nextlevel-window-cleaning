@@ -5,8 +5,13 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, MapPin, ArrowRight, Phone } from "lucide-react";
+import { GALLERY } from "@/config/images";
 
-const HERO_IMG = "/manus-storage/gallery_03_24de3848.jpg";
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
+
+const HERO_IMG = GALLERY.gallery_03;
 
 const services = [
   "Residential Window Cleaning",
@@ -25,7 +30,8 @@ const neighborhoods = [
 export default function SanfordNC() {
   useSEO(
     "Window Cleaning in Sanford, NC | Next Level Window Cleaning",
-    "Top-rated window cleaning and exterior washing in Sanford, NC. Locally owned by Adam Griffith. Serving Lee County homeowners and businesses."
+    "Top-rated window cleaning and exterior washing in Sanford, NC. Locally owned by Adam Griffith. Serving Lee County homeowners and businesses.",
+    "/service-areas/sanford-nc"
   );
   return (
     <Layout>
@@ -53,7 +59,7 @@ export default function SanfordNC() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link href="/get-a-free-estimate"><span className="btn-coral">Get a Free Estimate <ArrowRight size={16} /></span></Link>
-            <a href="tel:3234851020" className="btn-outline-white"><Phone size={16} /> (323) 485-1020</a>
+            <a href={PHONE_HREF} className="btn-outline-white"><Phone size={16} /> {PHONE}</a>
           </div>
         </div>
       </section>

@@ -5,6 +5,10 @@ import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { MapPin, ArrowRight } from "lucide-react";
 
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
+
 const areas = [
   { name: "Sanford, NC", slug: "/service-areas/sanford-nc", county: "Lee County", primary: true, desc: "Our home base. We serve all neighborhoods throughout Sanford, NC." },
   { name: "Cameron, NC", slug: null, county: "Moore County", primary: false, desc: "Serving homeowners and businesses in Cameron and surrounding areas." },
@@ -17,7 +21,8 @@ const areas = [
 export default function ServiceAreas() {
   useSEO(
     "Service Areas | Next Level Window Cleaning | Sanford, NC",
-    "Next Level Window Cleaning serves Sanford, Cameron, Spring Lake, Broadway, and surrounding Lee County, NC communities."
+    "Next Level Window Cleaning serves Sanford, Cameron, Spring Lake, Broadway, and surrounding Lee County, NC communities.",
+    "/service-areas"
   );
   return (
     <Layout>
@@ -61,7 +66,7 @@ export default function ServiceAreas() {
           <div className="mt-8 p-6 bg-sky-tint rounded-2xl text-center">
             <h3 className="font-bold text-gray-900 mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>Don't See Your City?</h3>
             <p className="text-gray-600 text-sm mb-4">We may still be able to serve you. Give us a call and we'll let you know.</p>
-            <a href="tel:3234851020" className="btn-primary inline-flex">Call (323) 485-1020</a>
+            <a href={PHONE_HREF} className="btn-primary inline-flex">Call {PHONE}</a>
           </div>
         </div>
       </section>

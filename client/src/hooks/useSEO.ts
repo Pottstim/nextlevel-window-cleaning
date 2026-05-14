@@ -1,9 +1,11 @@
 // useSEO.ts — Next Level Window Cleaning
-// Custom hook for dynamic per-route title + meta description injection.
-// Ensures each page has unique, crawlable metadata even in a client-side SPA.
+// Custom hook for dynamic per-route title + meta description + canonical + OG URL injection.
+// Ensures each page has unique, crawlable metadata and correct self-canonical URLs.
 import { useEffect } from "react";
 
-const useSEO = (title: string, description: string) => {
+const SITE_URL = "https://nextlevelwindowsnc.com";
+
+const useSEO = (title: string, description: string, path?: string) => {
   useEffect(() => {
     // 1. Update document title
     document.title = title;
@@ -25,7 +27,39 @@ const useSEO = (title: string, description: string) => {
 
     const ogDesc = document.querySelector<HTMLMetaElement>('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute("content", description);
-  }, [title, description]);
+
+    // 4. Update canonical tag to be self-canonical (critical for SEO)
+    // Each page's canonical should point to itself, not the homepage
+    const currentPath = path || window.location.pathname;
+    const canonicalUrl = `${SITE_URL}${currentPath}`;
+    
+    let canonicalTag = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (canonicalTag) {
+      canonicalTag.setAttribute("href", canonicalUrl);
+    } else {
+      canonicalTag = document.createElement("link");
+      canonicalTag.rel = "canonical";
+      canonicalTag.href = canonicalUrl;
+      document.head.appendChild(canonicalTag);
+    }
+
+    // 5. Update OG URL to match canonical
+    const ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]');
+    if (ogUrl) {
+      ogUrl.setAttribute("content", canonicalUrl);
+    } else {
+      const newOgUrl = document.createElement("meta");
+      newOgUrl.setAttribute("property", "og:url");
+      newOgUrl.content = canonicalUrl;
+      document.head.appendChild(newOgUrl);
+    }
+
+    // 6. Update Twitter URL if present
+    const twitterUrl = document.querySelector<HTMLMetaElement>('meta[name="twitter:url"]');
+    if (twitterUrl) {
+      twitterUrl.setAttribute("content", canonicalUrl);
+    }
+  }, [title, description, path]);
 };
 
 export default useSEO;

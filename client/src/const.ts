@@ -1,17 +1,17 @@
+// const.ts — Next Level Window Cleaning
+// Constants and configuration for the application
+
 export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 
-// Generate login URL at runtime so redirect URI reflects the current origin.
-export const getLoginUrl = () => {
-  const oauthPortalUrl = import.meta.env.VITE_OAUTH_PORTAL_URL;
-  const appId = import.meta.env.VITE_APP_ID;
-  const redirectUri = `${window.location.origin}/api/oauth/callback`;
-  const state = btoa(redirectUri);
+// Site configuration
+export const SITE_URL = "https://nextlevelwindowsnc.com";
+export const BUSINESS_NAME = "Next Level Window Cleaning";
 
-  const url = new URL(`${oauthPortalUrl}/app-auth`);
-  url.searchParams.set("appId", appId);
-  url.searchParams.set("redirectUri", redirectUri);
-  url.searchParams.set("state", state);
-  url.searchParams.set("type", "signIn");
+// Contact info - Using local NC area code (910) for Sanford
+// Note: Update with actual business phone number
+export const PHONE_DISPLAY = "(910) 555-0100";
+export const PHONE_HREF = "tel:9105550100";
+export const EMAIL = "info@nextlevelwindowsnc.com";
 
-  return url.toString();
-};
+// Social links
+export const FACEBOOK_URL = "https://www.facebook.com/people/Next-Level-Window-Cleaning/61579913446585/";

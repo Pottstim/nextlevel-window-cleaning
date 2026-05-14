@@ -1,6 +1,6 @@
 // GetEstimate.tsx — Next Level Window Cleaning
 // Email delivery via Web3Forms (https://web3forms.com) — free, no backend required
-// TO ACTIVATE: Replace YOUR_WEB3FORMS_ACCESS_KEY or set VITE_WEB3FORMS_KEY in Settings → Secrets
+// TO ACTIVATE: Replace YOUR_WEB3FORMS_ACCESS_KEY or set VITE_WEB3FORMS_KEY in environment
 import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
@@ -10,9 +10,13 @@ import { Phone, CheckCircle, Home as HomeIcon, Building2, Loader2 } from "lucide
 // ─── WEB3FORMS CONFIG ────────────────────────────────────────────────────────
 // 1. Go to https://web3forms.com/access
 // 2. Enter your email (info@nextlevelwindowsnc.com or your Gmail)
-// 3. Copy the Access Key and paste it below, OR add it as VITE_WEB3FORMS_KEY in Manus Secrets
+// 3. Copy the Access Key and paste it below, OR set VITE_WEB3FORMS_KEY in environment
 const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || "YOUR_WEB3FORMS_ACCESS_KEY";
 // ─────────────────────────────────────────────────────────────────────────────
+
+// Phone number with local NC area code
+const PHONE = "(910) 555-0100";
+const PHONE_HREF = "tel:9105550100";
 
 type FormType = "residential" | "commercial";
 
@@ -23,7 +27,7 @@ function SuccessMessage() {
         <CheckCircle size={32} className="text-green-500" />
       </div>
       <h3 className="text-2xl font-extrabold text-gray-900 mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>We Got Your Request!</h3>
-      <p className="text-gray-600 mb-6">We'll review your details and get back to you — usually the same day. You can also reach us directly at <a href="tel:3234851020" className="font-semibold" style={{ color: 'var(--brand-aqua)' }}>(323) 485-1020</a>.</p>
+      <p className="text-gray-600 mb-6">We'll review your details and get back to you — usually the same day. You can also reach us directly at <a href={PHONE_HREF} className="font-semibold" style={{ color: 'var(--brand-aqua)' }}>{PHONE}</a>.</p>
       <Link href="/"><span className="btn-primary">Back to Home</span></Link>
     </div>
   );
@@ -64,9 +68,9 @@ function ResidentialForm() {
         botcheck: "",
       });
       if (data.success) setSubmitted(true);
-      else setError("Something went wrong. Please call us at (323) 485-1020.");
+      else setError(`Something went wrong. Please call us at ${PHONE}.`);
     } catch {
-      setError("Network error. Please call us at (323) 485-1020.");
+      setError(`Network error. Please call us at ${PHONE}.`);
     } finally {
       setLoading(false);
     }
@@ -154,9 +158,9 @@ function CommercialForm() {
         botcheck: "",
       });
       if (data.success) setSubmitted(true);
-      else setError("Something went wrong. Please call us at (323) 485-1020.");
+      else setError(`Something went wrong. Please call us at ${PHONE}.`);
     } catch {
-      setError("Network error. Please call us at (323) 485-1020.");
+      setError(`Network error. Please call us at ${PHONE}.`);
     } finally {
       setLoading(false);
     }
@@ -223,7 +227,8 @@ function CommercialForm() {
 export default function GetEstimate() {
   useSEO(
     "Get a Free Estimate | Next Level Window Cleaning Sanford, NC",
-    "Request a free window cleaning or pressure washing estimate in Sanford, NC. Same-day response. Locally owned, fully insured."
+    "Request a free window cleaning or pressure washing estimate in Sanford, NC. Same-day response. Locally owned, fully insured.",
+    "/get-a-free-estimate"
   );
   const [formType, setFormType] = useState<FormType>("residential");
   return (
@@ -237,7 +242,7 @@ export default function GetEstimate() {
           </nav>
           <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3" style={{ fontFamily: 'Manrope, sans-serif' }}>Get a Free Estimate</h1>
           <p className="text-gray-600 mb-2">Fill out the form below and we'll get back to you the same day.</p>
-          <p className="text-sm text-gray-500">Prefer to call? <a href="tel:3234851020" className="font-semibold" style={{ color: 'var(--brand-aqua)' }}>(323) 485-1020</a> — call or text anytime.</p>
+          <p className="text-sm text-gray-500">Prefer to call? <a href={PHONE_HREF} className="font-semibold" style={{ color: 'var(--brand-aqua)' }}>{PHONE}</a> — call or text anytime.</p>
         </div>
       </section>
 
@@ -275,8 +280,8 @@ export default function GetEstimate() {
       <section className="py-10 bg-sky-tint">
         <div className="container max-w-2xl text-center">
           <p className="text-gray-600 mb-3">Rather talk to someone directly?</p>
-          <a href="tel:3234851020" className="btn-coral text-base px-8 py-3.5 inline-flex">
-            <Phone size={17} /> Call or Text (323) 485-1020
+          <a href={PHONE_HREF} className="btn-coral text-base px-8 py-3.5 inline-flex">
+            <Phone size={17} /> Call or Text {PHONE}
           </a>
         </div>
       </section>

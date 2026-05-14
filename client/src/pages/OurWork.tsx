@@ -6,90 +6,88 @@ import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import BeforeAfter from "@/components/BeforeAfter";
 import { ArrowRight, Facebook } from "lucide-react";
-
-const BEFORE_IMG = "/manus-storage/before-after-after_faba211b.jpg";
-const AFTER_IMG = "/manus-storage/before-after-before_2bea0ebd.jpg";
+import { GALLERY, BEFORE_AFTER } from "@/config/images";
 
 const galleryItems = [
   {
-    img: "/manus-storage/gallery_09_8d96bd3c.jpg",
+    img: GALLERY.gallery_09,
     label: "Soft Wash — House & Deck Rails",
     location: "Sanford, NC",
     service: "Soft Washing",
     featured: true,
   },
   {
-    img: "/manus-storage/gallery_10_5b1362dd.jpg",
+    img: GALLERY.gallery_10,
     label: "Deck Rail Cleaning",
     location: "Sanford, NC",
     service: "Soft Washing",
     featured: false,
   },
   {
-    img: "/manus-storage/gallery_01_9f404602.jpg",
+    img: GALLERY.gallery_01,
     label: "Residential Window Cleaning",
     location: "Sanford, NC",
     service: "Window Cleaning",
     featured: false,
   },
   {
-    img: "/manus-storage/gallery_02_f1eae76f.jpg",
+    img: GALLERY.gallery_02,
     label: "Exterior House Washing",
     location: "Sanford, NC",
     service: "Soft Washing",
     featured: false,
   },
   {
-    img: "/manus-storage/gallery_03_24de3848.jpg",
+    img: GALLERY.gallery_03,
     label: "Window & Siding Cleaning",
     location: "Lee County, NC",
     service: "Window Cleaning",
     featured: false,
   },
   {
-    img: "/manus-storage/gallery_04_b6c4cecb.jpg",
+    img: GALLERY.gallery_04,
     label: "Residential Exterior Wash",
     location: "Sanford, NC",
     service: "Soft Washing",
     featured: false,
   },
   {
-    img: "/manus-storage/gallery_05_612a64a8.jpg",
+    img: GALLERY.gallery_05,
     label: "House Soft Washing",
     location: "Cameron, NC",
     service: "Soft Washing",
     featured: false,
   },
   {
-    img: "/manus-storage/gallery_06_ec82e12a.jpg",
+    img: GALLERY.gallery_06,
     label: "Siding & Window Cleaning",
     location: "Sanford, NC",
     service: "Window Cleaning",
     featured: false,
   },
   {
-    img: "/manus-storage/gallery_07_5c146c2d.jpg",
+    img: GALLERY.gallery_07,
     label: "Full Exterior Cleaning",
     location: "Lee County, NC",
     service: "Soft Washing",
     featured: false,
   },
   {
-    img: "/manus-storage/gallery_08_50371040.jpg",
+    img: GALLERY.gallery_08,
     label: "Residential Window Cleaning",
     location: "Spring Lake, NC",
     service: "Window Cleaning",
     featured: false,
   },
   {
-    img: "/manus-storage/gallery_11_ad03b31d.jpg",
+    img: GALLERY.gallery_11,
     label: "Pressure Washing — Driveway",
     location: "Sanford, NC",
     service: "Pressure Washing",
     featured: false,
   },
   {
-    img: "/manus-storage/gallery_12_195f532c.jpg",
+    img: GALLERY.gallery_12,
     label: "Exterior Cleaning Results",
     location: "Sanford, NC",
     service: "Soft Washing",
@@ -107,7 +105,8 @@ const serviceColors: Record<string, string> = {
 export default function OurWork() {
   useSEO(
     "Our Work | Window Cleaning & Pressure Washing Results | Sanford, NC",
-    "See before-and-after results from Next Level Window Cleaning. Real jobs, real results for homes and businesses in Sanford, NC."
+    "See before-and-after results from Next Level Window Cleaning. Real jobs, real results for homes and businesses in Sanford, NC.",
+    "/our-work"
   );
   return (
     <Layout>
@@ -166,8 +165,8 @@ export default function OurWork() {
           </div>
           <div className="max-w-lg mx-auto">
             <BeforeAfter
-              beforeSrc={BEFORE_IMG}
-              afterSrc={AFTER_IMG}
+              beforeSrc={BEFORE_AFTER.before}
+              afterSrc={BEFORE_AFTER.after}
               beforeLabel="Before"
               afterLabel="After"
               alt="Window cleaning before and after Sanford NC"

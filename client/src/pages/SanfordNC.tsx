@@ -4,6 +4,7 @@ import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
+import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { CheckCircle, MapPin, ArrowRight, Phone } from "lucide-react";
 import { GALLERY } from "@/config/images";
 
@@ -35,6 +36,12 @@ export default function SanfordNC() {
   );
   return (
     <Layout>
+      <ServiceSchema 
+        name="Window Cleaning and Exterior Washing in Sanford, NC" 
+        description="Top-rated window cleaning and exterior washing in Sanford, NC. Locally owned by Adam Griffith. Serving Lee County homeowners and businesses." 
+        url="/service-areas/sanford-nc" 
+      />
+      <BreadcrumbSchema items={[{"name":"Home","url":"/"},{"name":"Service Areas","url":"/service-areas"},{"name":"Sanford, NC","url":"/service-areas/sanford-nc"}]} />
       {/* Hero */}
       <section className="relative min-h-[360px] flex items-center overflow-hidden">
         <div className="absolute inset-0">

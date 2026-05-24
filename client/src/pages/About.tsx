@@ -3,6 +3,7 @@ import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
+import { BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { Shield, Star, MapPin, CheckCircle, Phone, ArrowRight } from "lucide-react";
 import { ABOUT_HERO, ABOUT_DECK_RAILS } from "@/config/images";
 
@@ -25,6 +26,7 @@ export default function About() {
   );
   return (
     <Layout>
+      <BreadcrumbSchema items={[{"name":"Home","url":"/"},{"name":"About","url":"/about"}]} />
       {/* Hero */}
       <section className="relative min-h-[340px] flex items-center overflow-hidden">
         <div className="absolute inset-0">

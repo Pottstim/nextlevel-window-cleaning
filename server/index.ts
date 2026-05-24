@@ -14,7 +14,9 @@ async function startServer() {
 
   // Security Headers
   app.use((_req, res, next) => {
-    res.setHeader("X-Frame-Options", "DENY");
+    res.setHeader("X-Frame-Options", "SAMEORIGIN");
+    res.setHeader("X-Content-Type-Options", "nosniff");
+    res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
     res.setHeader("Content-Security-Policy", "default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:; img-src 'self' data: https:;");
     res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
     next();

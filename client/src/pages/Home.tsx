@@ -23,6 +23,45 @@ const HERO_IMG = HERO_GENERATED;
 const COMMERCIAL_IMG = GALLERY.gallery_02;
 const PRESSURE_IMG = GALLERY.gallery_10;
 
+// Local Business Schema - rendered on homepage for maximum SEO impact
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "@id": "https://nextlevelwindowsnc.com/#business",
+  "name": "Next Level Window Cleaning",
+  "description": "Professional window cleaning, pressure washing, soft washing, gutter cleaning, and Christmas light installation in Sanford, NC and surrounding areas.",
+  "url": "https://nextlevelwindowsnc.com",
+  "telephone": "+13234851020",
+  "email": "info@nextlevelwindowsnc.com",
+  "founder": { "@type": "Person", "name": "Adam Griffith" },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sanford", "addressRegion": "NC",
+    "postalCode": "27330", "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 35.4799, "longitude": -79.1775 },
+  "areaServed": [
+    { "@type": "City", "name": "Sanford", "containedInPlace": { "@type": "State", "name": "North Carolina" } },
+    { "@type": "City", "name": "Cameron", "containedInPlace": { "@type": "State", "name": "North Carolina" } },
+    { "@type": "City", "name": "Spring Lake", "containedInPlace": { "@type": "State", "name": "North Carolina" } },
+    { "@type": "City", "name": "Broadway", "containedInPlace": { "@type": "State", "name": "North Carolina" } }
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "18:00" }
+  ],
+  "sameAs": ["https://www.facebook.com/people/Next-Level-Window-Cleaning/61579913446585/"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog", "name": "Exterior Cleaning Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Window Cleaning", "url": "https://nextlevelwindowsnc.com/residential/window-cleaning" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pressure Washing", "url": "https://nextlevelwindowsnc.com/residential/pressure-washing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Soft Washing", "url": "https://nextlevelwindowsnc.com/residential/soft-washing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Christmas Light Installation", "url": "https://nextlevelwindowsnc.com/residential/christmas-lights" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Window Cleaning", "url": "https://nextlevelwindowsnc.com/commercial" } }
+    ]
+  }
+};
+
 // Phone number with local NC area code
 const PHONE = "(323) 485-1020";
 const PHONE_HREF = "tel:3234851020";
@@ -170,6 +209,7 @@ export default function Home() {
 
   return (
     <Layout>
+      <SchemaMarkup schema={localBusinessSchema} />
       <SchemaMarkup schema={reviewSchema} />
       {/* ── 1. HERO ── */}
       <section className="relative min-h-[580px] lg:min-h-[680px] flex items-center overflow-hidden">

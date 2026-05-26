@@ -19,6 +19,9 @@ import ResidentialGutterCleaning from "./pages/ResidentialGutterCleaning";
 import Commercial from "./pages/Commercial";
 import ServiceAreas from "./pages/ServiceAreas";
 import SanfordNC from "./pages/SanfordNC";
+import CameronNC from "./pages/CameronNC";
+import SpringLakeNC from "./pages/SpringLakeNC";
+import BroadwayNC from "./pages/BroadwayNC";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 
@@ -40,6 +43,9 @@ function Router() {
       <Route path="/commercial" component={Commercial} />
       <Route path="/service-areas" component={ServiceAreas} />
       <Route path="/service-areas/sanford-nc" component={SanfordNC} />
+      <Route path="/service-areas/cameron-nc" component={CameronNC} />
+      <Route path="/service-areas/spring-lake-nc" component={SpringLakeNC} />
+      <Route path="/service-areas/broadway-nc" component={BroadwayNC} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
       <Route path="/404" component={NotFound} />

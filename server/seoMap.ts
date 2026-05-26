@@ -43,6 +43,10 @@ export const seoMap: Record<string, { title: string; description: string }> = {
     title: "Christmas Light Installation in Sanford, NC | Next Level",
     description: "Professional holiday light installation and takedown for homes in Sanford and Lee County, NC. Stress-free, beautiful results every time."
   },
+  "/residential/gutter-cleaning": {
+    title: "Gutter Cleaning in Sanford, NC | Next Level Window Cleaning",
+    description: "Professional gutter cleaning and downspout flushing for homes in Sanford, NC. Prevents water damage, fully insured. Free estimates."
+  },
   "/commercial": {
     title: "Commercial Window & Exterior Cleaning Sanford, NC | Next Level",
     description: "Reliable commercial exterior cleaning in Sanford, NC. Keep your storefront or business looking professional with our window and pressure washing services."
@@ -54,6 +58,18 @@ export const seoMap: Record<string, { title: string; description: string }> = {
   "/service-areas/sanford-nc": {
     title: "Window Cleaning in Sanford, NC | Next Level Window Cleaning",
     description: "Top-rated window cleaning and exterior washing in Sanford, NC. Locally owned by Adam Griffith. Serving Lee County homeowners and businesses."
+  },
+  "/service-areas/cameron-nc": {
+    title: "Window Cleaning in Cameron, NC | Next Level Window Cleaning",
+    description: "Professional window cleaning and exterior washing in Cameron, NC. Serving Harnett and Lee County homeowners. Locally owned by Adam Griffith."
+  },
+  "/service-areas/spring-lake-nc": {
+    title: "Window Cleaning in Spring Lake, NC | Next Level Window Cleaning",
+    description: "Professional window cleaning and exterior washing in Spring Lake, NC. Serving Cumberland County and Fort Liberty area homeowners."
+  },
+  "/service-areas/broadway-nc": {
+    title: "Window Cleaning in Broadway, NC | Next Level Window Cleaning",
+    description: "Professional window cleaning and exterior washing in Broadway, NC. Serving Lee County homeowners. Locally owned by Adam Griffith."
   },
   "/privacy": {
     title: "Privacy Policy | Next Level Window Cleaning",

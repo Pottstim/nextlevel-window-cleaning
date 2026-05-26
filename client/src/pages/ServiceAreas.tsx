@@ -11,9 +11,9 @@ const PHONE_HREF = "tel:3234851020";
 
 const areas = [
   { name: "Sanford, NC", slug: "/service-areas/sanford-nc", county: "Lee County", primary: true, desc: "Our home base. We serve all neighborhoods throughout Sanford, NC." },
-  { name: "Cameron, NC", slug: null, county: "Moore County", primary: false, desc: "Serving homeowners and businesses in Cameron and surrounding areas." },
-  { name: "Spring Lake, NC", slug: null, county: "Cumberland County", primary: false, desc: "Professional exterior cleaning for Spring Lake properties." },
-  { name: "Broadway, NC", slug: null, county: "Lee County", primary: false, desc: "Window cleaning, pressure washing, and more in Broadway, NC." },
+  { name: "Cameron, NC", slug: "/service-areas/cameron-nc", county: "Moore County", primary: false, desc: "Serving homeowners and businesses in Cameron and surrounding areas." },
+  { name: "Spring Lake, NC", slug: "/service-areas/spring-lake-nc", county: "Cumberland County", primary: false, desc: "Professional exterior cleaning for Spring Lake properties." },
+  { name: "Broadway, NC", slug: "/service-areas/broadway-nc", county: "Lee County", primary: false, desc: "Window cleaning, pressure washing, and more in Broadway, NC." },
   { name: "Carbonton, NC", slug: null, county: "Lee County", primary: false, desc: "Serving Carbonton and the surrounding Lee County area." },
   { name: "Lemon Springs, NC", slug: null, county: "Lee County", primary: false, desc: "Exterior cleaning services available in Lemon Springs." },
 ];

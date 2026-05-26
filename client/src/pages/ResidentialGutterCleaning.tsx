@@ -52,7 +52,6 @@ export default function ResidentialGutterCleaning() {
         name="Gutter Cleaning"
         description="Professional gutter cleaning and downspout flushing for residential properties in Sanford, NC and surrounding areas."
         url="https://nextlevelwindowsnc.com/residential/gutter-cleaning"
-        areaServed={["Sanford", "Cameron", "Spring Lake", "Broadway", "Lee County", "NC"]}
       />
       <BreadcrumbSchema
         items={[
@@ -125,7 +124,7 @@ export default function ResidentialGutterCleaning() {
         <div className="container max-w-3xl text-center">
           <h2 className="text-2xl font-extrabold text-gray-900 mb-3" style={{ fontFamily: 'Manrope, sans-serif' }}>Service Area</h2>
           <p className="text-gray-600 mb-4">We provide gutter cleaning throughout Lee County and surrounding communities, including:</p>
-          <p className="font-semibold text-[var(--brand-aqua)]"ResidentialGutterCleaning.tsx style={{ fontFamily: 'Manrope, sans-serif' }}>Sanford &middot; Cameron &middot; Spring Lake &middot; Broadway &middot; Pittsboro &middot; Carthage</p>
+          <p className="font-semibold text-[var(--brand-aqua)]" style={{ fontFamily: 'Manrope, sans-serif' }}>Sanford · Cameron · Spring Lake · Broadway · Pittsboro · Carthage</p>
         </div>
       </section>
 
@@ -140,12 +139,8 @@ export default function ResidentialGutterCleaning() {
       </section>
 
       <CTASection
-        heading="Ready to Schedule Your Gutter Cleaning?"
-        subheading="Free estimates, same-week scheduling, and 100% satisfaction guaranteed."
-        primaryLabel="Get a Free Estimate"
-        primaryHref="/get-a-free-estimate"
-        phone={PHONE}
-        phoneHref={PHONE_HREF}
+        title="Ready to Schedule Your Gutter Cleaning?"
+        subtitle="Free estimates, same-week scheduling, and 100% satisfaction guaranteed."
       />
     </Layout>
   );

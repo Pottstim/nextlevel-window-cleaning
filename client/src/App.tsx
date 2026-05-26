@@ -15,6 +15,7 @@ import ResidentialWindowCleaning from "./pages/ResidentialWindowCleaning";
 import ResidentialPressureWashing from "./pages/ResidentialPressureWashing";
 import ResidentialSoftWashing from "./pages/ResidentialSoftWashing";
 import ResidentialChristmasLights from "./pages/ResidentialChristmasLights";
+import ResidentialGutterCleaning from "./pages/ResidentialGutterCleaning";
 import Commercial from "./pages/Commercial";
 import ServiceAreas from "./pages/ServiceAreas";
 import SanfordNC from "./pages/SanfordNC";
@@ -35,6 +36,7 @@ function Router() {
       <Route path="/residential/pressure-washing" component={ResidentialPressureWashing} />
       <Route path="/residential/soft-washing" component={ResidentialSoftWashing} />
       <Route path="/residential/christmas-lights" component={ResidentialChristmasLights} />
+              <Route path="/residential/gutter-cleaning" component={ResidentialGutterCleaning} />
       <Route path="/commercial" component={Commercial} />
       <Route path="/service-areas" component={ServiceAreas} />
       <Route path="/service-areas/sanford-nc" component={SanfordNC} />

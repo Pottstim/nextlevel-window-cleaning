@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { LOGO_URL } from "@/config/images";
 
-// Using local NC area code (910) for Sanford - update with actual number
+// ⚠️ TODO: PHONE IS A LOS ANGELES (323) AREA CODE — replace with a local NC (910/919) number via Google Voice or Twilio for local credibility
 const PHONE = "(323) 485-1020";
 const PHONE_HREF = "tel:3234851020";
 const FB_URL = "https://www.facebook.com/people/Next-Level-Window-Cleaning/61579913446585/";
@@ -24,6 +24,7 @@ const navItems = [
       { label: "Pressure Washing", href: "/residential/pressure-washing" },
       { label: "Soft Washing", href: "/residential/soft-washing" },
       { label: "Christmas Lights", href: "/residential/christmas-lights" },
+            { label: "Gutter Cleaning", href: "/residential/gutter-cleaning" },
     ]
   },
   { label: "Commercial", href: "/commercial" },
@@ -198,7 +199,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   ["Window Cleaning", "/residential/window-cleaning"],
                   ["Pressure Washing", "/residential/pressure-washing"],
                   ["Soft Washing", "/residential/soft-washing"],
-                  ["Gutter Cleaning", "/residential"],
+                  ["Gutter Cleaning", "/residential/gutter-cleaning"],
                   ["Christmas Lights", "/residential/christmas-lights"],
                   ["Commercial Services", "/commercial"],
                 ].map(([label, href]) => (

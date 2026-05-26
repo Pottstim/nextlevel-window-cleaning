@@ -4,6 +4,7 @@ import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
+import { BreadcrumbSchema } from "@/components/SchemaMarkup";
 import BeforeAfter from "@/components/BeforeAfter";
 import { ArrowRight, Facebook } from "lucide-react";
 import { GALLERY, BEFORE_AFTER } from "@/config/images";
@@ -110,6 +111,7 @@ export default function OurWork() {
   );
   return (
     <Layout>
+      <BreadcrumbSchema items={[{"name":"Home","url":"/"},{"name":"Our Work","url":"/our-work"}]} />
       {/* Hero */}
       <section className="py-12 bg-sky-tint border-b border-gray-200">
         <div className="container max-w-3xl text-center">

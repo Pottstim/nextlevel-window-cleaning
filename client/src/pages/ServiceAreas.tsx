@@ -3,6 +3,7 @@ import useSEO from "@/hooks/useSEO";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
+import { BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { MapPin, ArrowRight } from "lucide-react";
 
 // Phone number with local NC area code
@@ -26,6 +27,7 @@ export default function ServiceAreas() {
   );
   return (
     <Layout>
+      <BreadcrumbSchema items={[{"name":"Home","url":"/"},{"name":"Service Areas","url":"/service-areas"}]} />
       <section className="py-12 bg-sky-tint border-b border-gray-200">
         <div className="container max-w-3xl text-center">
           <nav className="text-gray-400 text-xs mb-4 flex items-center justify-center gap-1.5" style={{ fontFamily: 'Manrope, sans-serif' }}>

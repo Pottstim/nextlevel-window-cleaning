@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { Phone, CheckCircle, Home as HomeIcon, Building2, Loader2 } from "lucide-react";
+import { BreadcrumbSchema } from "@/components/SchemaMarkup";
 
 // ─── WEB3FORMS CONFIG ────────────────────────────────────────────────────────
 // 1. Go to https://web3forms.com/access
@@ -233,6 +234,7 @@ export default function GetEstimate() {
   const [formType, setFormType] = useState<FormType>("residential");
   return (
     <Layout>
+      <BreadcrumbSchema items={[{"name":"Home","url":"/"},{"name":"Get a Free Estimate","url":"/get-a-free-estimate"}]} />
       {/* Header */}
       <section className="py-12 bg-sky-tint border-b border-gray-200">
         <div className="container max-w-2xl text-center">

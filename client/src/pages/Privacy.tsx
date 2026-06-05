@@ -35,7 +35,7 @@ export default function Privacy() {
           </p>
           <h2>Contact Us</h2>
           <p>
-            If you have any questions about this Privacy Policy, please contact us at info@nextlevelwindowsnc.com or (323) 485-1020.
+            If you have any questions about this Privacy Policy, please contact us at info@nextlevelwindowsnc.com or (919) 348-9808.
           </p>
         </div>
       </section>

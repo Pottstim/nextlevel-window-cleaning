@@ -11,6 +11,10 @@ import {
 import { LOGO_URL } from "@/config/images";
 
 // ⚠️ Phone is a Los Angeles (323) area code — local NC number (910/919) recommended for local SEO, but current number is functional and in production
+// Dual phone strategy: 919 local NC number displayed for local SEO trust, 323 (actual line) shown secondary
+// Ported 323 → Google Voice local 919 forwarding number for maximum local credibility
+const PHONE_LOCAL = "(919) 348-9808";
+const PHONE_LOCAL_HREF = "tel:9193489808";
 const PHONE = "(323) 485-1020";
 const PHONE_HREF = "tel:3234851020";
 const FB_URL = "https://www.facebook.com/people/Next-Level-Window-Cleaning/61579913446585/";
@@ -74,8 +78,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <span className="flex items-center gap-1.5">
           <MapPin size={12} /> Serving Sanford, Cameron, Spring Lake &amp; Broadway, NC
         </span>
-        <a href={PHONE_HREF} className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
-          <Phone size={12} /> {PHONE} — Call or Text for a Free Estimate
+        <a href={PHONE_LOCAL_HREF} className="flex items-center gap-1.5 hover:text-white/80 transition-colors">
+          <Phone size={12} /> {PHONE_LOCAL} — Free Estimates, Same-Day Response
         </a>
       </div>
 
@@ -114,10 +118,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href={PHONE_HREF} className="flex items-center gap-1.5 font-bold text-sm"
-              style={{ color: 'var(--brand-coral)', fontFamily: 'Manrope, sans-serif' }}>
-              <Phone size={15} /> {PHONE}
-            </a>
+            <div className="flex flex-col items-end">
+              <a href={PHONE_LOCAL_HREF} className="flex items-center gap-1.5 font-bold text-sm"
+                style={{ color: 'var(--brand-coral)', fontFamily: 'Manrope, sans-serif' }}>
+                <Phone size={15} /> {PHONE_LOCAL}
+              </a>
+              <span className="text-[10px] text-gray-400 leading-tight">Calls forwarded to our team</span>
+            </div>
             <Link href="/get-a-free-estimate">
               <span className="btn-primary text-sm py-2.5 px-5">Get a Free Estimate</span>
             </Link>
@@ -157,8 +164,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </div>
               ))}
               <div className="mt-3 pt-3 border-t border-gray-100 flex flex-col gap-2">
-                <a href={PHONE_HREF} className="btn-coral text-center justify-center">
-                  <Phone size={16} /> Call / Text: {PHONE}
+                <a href={PHONE_LOCAL_HREF} className="btn-coral text-center justify-center">
+                  <Phone size={16} /> Call / Text: {PHONE_LOCAL}
                 </a>
                 <Link href="/get-a-free-estimate">
                   <span className="btn-primary w-full text-center justify-center">Get a Free Estimate</span>
@@ -245,7 +252,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </li>
                 <li className="flex items-center gap-2.5">
                   <Phone size={15} className="flex-shrink-0 text-[var(--brand-aqua)]" />
-                  <a href={PHONE_HREF} className="hover:text-white transition-colors">{PHONE}</a>
+                  <div>
+                    <a href={PHONE_LOCAL_HREF} className="hover:text-white transition-colors block">{PHONE_LOCAL}</a>
+                    <span className="text-[11px] text-gray-500">or <a href={PHONE_HREF} className="hover:text-white transition-colors">{PHONE}</a></span>
+                  </div>
                 </li>
                 <li className="flex items-center gap-2.5">
                   <Mail size={15} className="flex-shrink-0 text-[var(--brand-aqua)]" />
@@ -284,10 +294,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Mobile sticky bottom CTA bar */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 flex border-t border-white/20"
         style={{ backgroundColor: 'var(--brand-charcoal)' }}>
-        <a href={PHONE_HREF}
+        <a href={PHONE_LOCAL_HREF}
           className="flex-1 flex items-center justify-center gap-2 py-3.5 text-white font-bold text-sm border-r border-white/20"
           style={{ fontFamily: 'Manrope, sans-serif' }}>
-          <Phone size={16} /> Call Now
+          <Phone size={16} /> Call (919) 348-9808
         </a>
         <Link href="/get-a-free-estimate">
           <span className="flex-1 flex items-center justify-center gap-2 py-3.5 text-white font-bold text-sm"

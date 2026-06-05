@@ -9,8 +9,8 @@ import { CheckCircle, MapPin, ArrowRight, Phone } from "lucide-react";
 import { GALLERY } from "@/config/images";
 
 // Phone number with local NC area code
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+const PHONE = "(919) 348-9808";
+const PHONE_HREF = "tel:9193489808";
 
 const HERO_IMG = GALLERY.gallery_03;
 

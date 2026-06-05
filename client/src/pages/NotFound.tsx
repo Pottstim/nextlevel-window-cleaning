@@ -26,7 +26,7 @@ export default function NotFound() {
             <Link href="/get-a-free-estimate">
               <span className="btn-coral">Get a Free Estimate <ArrowRight size={16} /></span>
             </Link>
-            <a href="tel:3234851020"
+            <a href="tel:9193489808"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-lg font-bold text-white text-sm"
               style={{ backgroundColor: 'var(--brand-charcoal)', fontFamily: 'Manrope, sans-serif' }}>
               <Phone size={16} /> Call Us

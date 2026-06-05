@@ -9,8 +9,11 @@ export const BUSINESS_NAME = "Next Level Window Cleaning";
 
 // Contact info - Phone is a working number with LA (323) area code
 // Consider a local NC (910/919) forwarding number via Google Voice for local SEO
-export const PHONE_DISPLAY = "(323) 485-1020";
-export const PHONE_HREF = "tel:3234851020";
+// Dual phone strategy: 919 local NC number for display/SEO, 323 for actual calls
+export const PHONE_DISPLAY = "(919) 348-9808";
+export const PHONE_DISPLAY_SECONDARY = "(323) 485-1020";
+export const PHONE_HREF = "tel:9193489808";
+export const PHONE_HREF_SECONDARY = "tel:3234851020";
 export const EMAIL = "info@nextlevelwindowsnc.com";
 
 // Social links

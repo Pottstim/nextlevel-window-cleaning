@@ -18,7 +18,7 @@ export function ServiceSchema({ name, description, url }: { name: string; descri
     "provider": {
       "@type": "LocalBusiness",
       "name": "Next Level Window Cleaning",
-      "telephone": "+13234851020",
+      "telephone": "+19193489808",
       "url": "https://nextlevelwindowsnc.com"
     },
     "areaServed": [

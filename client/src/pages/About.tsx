@@ -8,8 +8,8 @@ import { Shield, Star, MapPin, CheckCircle, Phone, ArrowRight } from "lucide-rea
 import { ABOUT_HERO, ABOUT_DECK_RAILS } from "@/config/images";
 
 // Phone number with local NC area code
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+const PHONE = "(919) 348-9808";
+const PHONE_HREF = "tel:9193489808";
 
 const values = [
   { icon: Shield, title: "Fully Insured", desc: "We carry full liability insurance on every job. You're protected." },

@@ -36,7 +36,7 @@ export default function Terms() {
           </p>
           <h2>5. Contact Information</h2>
           <p>
-            For any questions or concerns regarding these terms, please contact us at info@nextlevelwindowsnc.com or (910) 485-1020.
+            For any questions or concerns regarding these terms, please contact us at info@nextlevelwindowsnc.com or (323) 485-1020.
           </p>
         </div>
       </section>

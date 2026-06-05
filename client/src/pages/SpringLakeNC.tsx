@@ -8,8 +8,8 @@ import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { CheckCircle, MapPin, ArrowRight, Phone } from "lucide-react";
 import { GALLERY } from "@/config/images";
 
-const PHONE = "(910) 485-1020";
-const PHONE_HREF = "tel:9104851020";
+const PHONE = "(323) 485-1020";
+const PHONE_HREF = "tel:3234851020";
 const HERO_IMG = GALLERY.gallery_03;
 
 const services = [

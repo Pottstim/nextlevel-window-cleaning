@@ -31,7 +31,7 @@ const localBusinessSchema = {
   "name": "Next Level Window Cleaning",
   "description": "Professional window cleaning, pressure washing, soft washing, gutter cleaning, and Christmas light installation in Sanford, NC and surrounding areas.",
   "url": "https://nextlevelwindowsnc.com",
-  "telephone": "+19104851020",
+  "telephone": "+13234851020",
   "email": "info@nextlevelwindowsnc.com",
   "founder": { "@type": "Person", "name": "Adam Griffith" },
   "address": {
@@ -63,8 +63,8 @@ const localBusinessSchema = {
 };
 
 // Phone number with local NC area code
-const PHONE = "(910) 485-1020";
-const PHONE_HREF = "tel:9104851020";
+const PHONE = "(323) 485-1020";
+const PHONE_HREF = "tel:3234851020";
 
 const trustItems = [
   { icon: Shield, label: "Fully Insured" },
@@ -180,7 +180,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function Home() {
   useSEO(
     "Next Level Window Cleaning | Sanford, NC",
-    "Window cleaning, pressure washing & exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (910) 485-1020.",
+    "Window cleaning, pressure washing & exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (323) 485-1020.",
     "/"
   );
 

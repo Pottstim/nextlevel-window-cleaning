@@ -11,8 +11,8 @@ import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 const HERO_IMG = RESIDENTIAL_WINDOW_CLEANING_HERO;
 
 // Phone number with local NC area code
-const PHONE = "(910) 485-1020";
-const PHONE_HREF = "tel:9104851020";
+const PHONE = "(323) 485-1020";
+const PHONE_HREF = "tel:3234851020";
 
 const benefits = [
   "Better natural light inside your home",

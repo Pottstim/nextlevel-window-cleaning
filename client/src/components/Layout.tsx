@@ -10,9 +10,9 @@ import {
 } from "lucide-react";
 import { LOGO_URL } from "@/config/images";
 
-// ✅ Phone updated to local NC (910) area code for Sanford-area credibility
-const PHONE = "(910) 485-1020";
-const PHONE_HREF = "tel:9104851020";
+// ⚠️ Phone is a Los Angeles (323) area code — local NC number (910/919) recommended for local SEO, but current number is functional and in production
+const PHONE = "(323) 485-1020";
+const PHONE_HREF = "tel:3234851020";
 const FB_URL = "https://www.facebook.com/people/Next-Level-Window-Cleaning/61579913446585/";
 
 const navItems = [

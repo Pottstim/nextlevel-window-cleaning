@@ -8,8 +8,8 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { SchemaMarkup, BreadcrumbSchema } from "@/components/SchemaMarkup";
 
 // Phone number with local NC area code
-const PHONE = "(910) 485-1020";
-const PHONE_HREF = "tel:9104851020";
+const PHONE = "(323) 485-1020";
+const PHONE_HREF = "tel:3234851020";
 
 const faqs = [
   { category: "About the Business", items: [

@@ -1,7 +1,7 @@
 export const seoMap: Record<string, { title: string; description: string }> = {
   "/": {
     title: "Next Level Window Cleaning | Sanford, NC",
-    description: "Window cleaning, pressure washing & exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (910) 485-1020."
+    description: "Window cleaning, pressure washing & exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (323) 485-1020."
   },
   "/about": {
     title: "About Next Level Window Cleaning | Sanford, NC",

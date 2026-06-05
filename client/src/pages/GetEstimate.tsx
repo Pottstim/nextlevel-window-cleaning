@@ -16,8 +16,8 @@ const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || "YOUR_WEB3FORMS_ACCE
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Phone number with local NC area code
-const PHONE = "(910) 485-1020";
-const PHONE_HREF = "tel:9104851020";
+const PHONE = "(323) 485-1020";
+const PHONE_HREF = "tel:3234851020";
 
 type FormType = "residential" | "commercial";
 
@@ -83,7 +83,7 @@ function ResidentialForm() {
       <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
       <div className="grid sm:grid-cols-2 gap-5">
         <div><label className="form-label">Your Name *</label><input required name="name" value={form.name} onChange={handleChange} className="form-input" placeholder="Jane Smith" /></div>
-        <div><label className="form-label">Phone Number *</label><input required name="phone" value={form.phone} onChange={handleChange} className="form-input" placeholder="(910) 485-1020" /></div>
+        <div><label className="form-label">Phone Number *</label><input required name="phone" value={form.phone} onChange={handleChange} className="form-input" placeholder="(323) 485-1020" /></div>
       </div>
       <div><label className="form-label">Email Address</label><input type="email" name="email" value={form.email} onChange={handleChange} className="form-input" placeholder="jane@example.com" /></div>
       <div className="grid sm:grid-cols-2 gap-5">
@@ -176,7 +176,7 @@ function CommercialForm() {
         <div><label className="form-label">Contact Name *</label><input required name="contactName" value={form.contactName} onChange={handleChange} className="form-input" placeholder="John Smith" /></div>
       </div>
       <div className="grid sm:grid-cols-2 gap-5">
-        <div><label className="form-label">Phone *</label><input required name="phone" value={form.phone} onChange={handleChange} className="form-input" placeholder="(910) 485-1020" /></div>
+        <div><label className="form-label">Phone *</label><input required name="phone" value={form.phone} onChange={handleChange} className="form-input" placeholder="(323) 485-1020" /></div>
         <div><label className="form-label">Email</label><input type="email" name="email" value={form.email} onChange={handleChange} className="form-input" placeholder="john@business.com" /></div>
       </div>
       <div><label className="form-label">Property Address *</label><input required name="address" value={form.address} onChange={handleChange} className="form-input" placeholder="456 Commerce Blvd, Sanford, NC" /></div>

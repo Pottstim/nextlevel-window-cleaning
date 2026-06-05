@@ -8,9 +8,9 @@ export const SITE_URL = "https://nextlevelwindowsnc.com";
 export const BUSINESS_NAME = "Next Level Window Cleaning";
 
 // Contact info - Using local NC area code (910) for Sanford
-// Note: Update with actual business phone number
-export const PHONE_DISPLAY = "(323) 485-1020";
-export const PHONE_HREF = "tel:3234851020";
+// Note: Update with actual business phone number when obtained
+export const PHONE_DISPLAY = "(910) 485-1020";
+export const PHONE_HREF = "tel:9104851020";
 export const EMAIL = "info@nextlevelwindowsnc.com";
 
 // Social links

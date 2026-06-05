@@ -6,8 +6,8 @@ import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, Phone, ArrowRight } from "lucide-react";
 
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+const PHONE = "(910) 485-1020";
+const PHONE_HREF = "tel:9104851020";
 
 const benefits = [
   "Prevent costly water damage to fascia, soffits, and foundations",

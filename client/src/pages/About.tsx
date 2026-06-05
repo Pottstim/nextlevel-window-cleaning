@@ -8,8 +8,8 @@ import { Shield, Star, MapPin, CheckCircle, Phone, ArrowRight } from "lucide-rea
 import { ABOUT_HERO, ABOUT_DECK_RAILS } from "@/config/images";
 
 // Phone number with local NC area code
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+const PHONE = "(910) 485-1020";
+const PHONE_HREF = "tel:9104851020";
 
 const values = [
   { icon: Shield, title: "Fully Insured", desc: "We carry full liability insurance on every job. You're protected." },
@@ -39,7 +39,7 @@ export default function About() {
             <span className="text-white">About</span>
           </nav>
           <h1 className="text-4xl lg:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: 'Manrope, sans-serif' }}>About Next Level Window Cleaning</h1>
-          <p className="text-white/85 text-lg max-w-lg">Locally owned, fully insured, and committed to real results for homeowners and businesses in Sanford, NC.</p>
+          <p className="text-white/85 text-lg max-w-lg">We're a small, local team based right here in Sanford. Fully insured, and we stand behind every job we do — no corporate scripts, no shortcuts.</p>
         </div>
       </section>
 

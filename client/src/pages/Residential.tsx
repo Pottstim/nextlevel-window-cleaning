@@ -8,8 +8,8 @@ import { ArrowRight, Phone, Sparkles, Droplets, Wind, Lightbulb } from "lucide-r
 import { GALLERY } from "@/config/images";
 
 // Phone number with local NC area code
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+const PHONE = "(910) 485-1020";
+const PHONE_HREF = "tel:9104851020";
 
 const HERO_IMG = GALLERY.gallery_01;
 

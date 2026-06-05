@@ -16,8 +16,8 @@ const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || "YOUR_WEB3FORMS_ACCE
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Phone number with local NC area code
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+const PHONE = "(910) 485-1020";
+const PHONE_HREF = "tel:9104851020";
 
 function SuccessMessage() {
   return (
@@ -165,7 +165,7 @@ export default function Contact() {
                   {/* Honeypot spam protection */}
                   <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
                   <div><label className="form-label">Your Name *</label><input required name="name" value={form.name} onChange={handleChange} className="form-input" placeholder="Jane Smith" /></div>
-                  <div><label className="form-label">Phone *</label><input required name="phone" value={form.phone} onChange={handleChange} className="form-input" placeholder="(323) 485-1020" /></div>
+                  <div><label className="form-label">Phone *</label><input required name="phone" value={form.phone} onChange={handleChange} className="form-input" placeholder="(910) 485-1020" /></div>
                   <div><label className="form-label">Email</label><input type="email" name="email" value={form.email} onChange={handleChange} className="form-input" placeholder="jane@example.com" /></div>
                   <div><label className="form-label">Message *</label><textarea required name="message" value={form.message} onChange={handleChange} className="form-input" rows={4} placeholder="Tell us what you need..." /></div>
                   {error && <p className="text-red-500 text-sm">{error}</p>}

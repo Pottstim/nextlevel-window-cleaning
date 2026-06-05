@@ -31,7 +31,7 @@ const localBusinessSchema = {
   "name": "Next Level Window Cleaning",
   "description": "Professional window cleaning, pressure washing, soft washing, gutter cleaning, and Christmas light installation in Sanford, NC and surrounding areas.",
   "url": "https://nextlevelwindowsnc.com",
-  "telephone": "+13234851020",
+  "telephone": "+19104851020",
   "email": "info@nextlevelwindowsnc.com",
   "founder": { "@type": "Person", "name": "Adam Griffith" },
   "address": {
@@ -63,8 +63,8 @@ const localBusinessSchema = {
 };
 
 // Phone number with local NC area code
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+const PHONE = "(910) 485-1020";
+const PHONE_HREF = "tel:9104851020";
 
 const trustItems = [
   { icon: Shield, label: "Fully Insured" },
@@ -78,21 +78,21 @@ const services = [
   {
     icon: Sparkles,
     title: "Window Cleaning",
-    desc: "Crystal-clear windows inside and out. Residential and commercial.",
+    desc: "Clean windows inside and out. Residential or commercial, we handle both.",
     href: "/residential/window-cleaning",
     color: "var(--brand-aqua)",
   },
   {
     icon: Droplets,
     title: "Pressure Washing",
-    desc: "Driveways, patios, siding, and decks restored to like-new condition.",
+    desc: "Driveways, patios, siding, decks — we get the grime off without damaging the surface.",
     href: "/residential/pressure-washing",
     color: "var(--brand-aqua)",
   },
   {
     icon: Wind,
     title: "Soft Washing",
-    desc: "Safe, low-pressure cleaning for roofs, siding, and delicate surfaces.",
+    desc: "Low-pressure cleaning that kills algae and mold at the root. Safe for roofs and painted surfaces.",
     href: "/residential/soft-washing",
     color: "var(--brand-aqua)",
   },
@@ -180,7 +180,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function Home() {
   useSEO(
     "Next Level Window Cleaning | Sanford, NC",
-    "Window cleaning, pressure washing & exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (323) 485-1020.",
+    "Window cleaning, pressure washing & exterior services in Sanford, NC. Locally owned, fully insured. Free estimates — call (910) 485-1020.",
     "/"
   );
 

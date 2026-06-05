@@ -8,8 +8,8 @@ import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone } from "lucide-r
 import { SOFT_WASHING_HERO } from "@/config/images";
 
 // Phone number with local NC area code
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+const PHONE = "(910) 485-1020";
+const PHONE_HREF = "tel:9104851020";
 
 const HERO_IMG = SOFT_WASHING_HERO;
 
@@ -66,8 +66,8 @@ export default function ResidentialSoftWashing() {
       </section>
       <section className="py-14 bg-white"><div className="container max-w-3xl">
         <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-4">Gentle Cleaning for Delicate Surfaces</h2>
-        <p className="text-gray-600 leading-relaxed ml-5 mb-4">Soft washing is the safest and most effective method for cleaning surfaces that can't handle high pressure. Using biodegradable solutions and low-pressure water, we eliminate algae, mold, mildew, and staining without any risk of damage.</p>
-        <p className="text-gray-600 leading-relaxed ml-5">It's the industry-recommended approach for roofs, painted surfaces, and older siding — and the results last significantly longer than pressure washing alone.</p>
+        <p className="text-gray-600 leading-relaxed ml-5 mb-4">High pressure has its place, but some surfaces need a gentler touch. We use biodegradable cleaning solutions at low pressure to kill algae, mold, and mildew at the root — without blasting your shingles off or stripping your paint.</p>
+        <p className="text-gray-600 leading-relaxed ml-5">This is the method roof manufacturers and siding installers recommend. It cleans deeper, and the results hold up for years instead of months.</p>
       </div></section>
       <section className="py-14 bg-sky-tint"><div className="container">
         <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-8">What We Soft Wash</h2>

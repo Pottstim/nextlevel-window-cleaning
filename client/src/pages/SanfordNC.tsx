@@ -9,8 +9,8 @@ import { CheckCircle, MapPin, ArrowRight, Phone } from "lucide-react";
 import { GALLERY } from "@/config/images";
 
 // Phone number with local NC area code
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+const PHONE = "(910) 485-1020";
+const PHONE_HREF = "tel:9104851020";
 
 const HERO_IMG = GALLERY.gallery_03;
 
@@ -77,7 +77,7 @@ export default function SanfordNC() {
           <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-4">Your Local Exterior Cleaning Experts</h2>
           <div className="ml-5 flex flex-col gap-4 text-gray-600 leading-relaxed">
             <p>Next Level Window Cleaning is locally owned and operated in Sanford, NC. Owner Adam Griffith started this business to provide his neighbors with professional, reliable exterior cleaning at honest prices.</p>
-            <p>Sanford's humid climate means algae, mold, and pollen build up fast on windows, driveways, and siding. We know the local conditions and use the right methods for each surface type.</p>
+            <p>Sanford summers are humid and the pollen here is relentless — it settles on everything. Windows haze over, siding turns green, and driveways get slick with algae. We live here too, so we know exactly what each surface needs to come clean without damage.</p>
             <p>We're fully insured and serve all neighborhoods throughout Sanford and Lee County — from residential homes to commercial storefronts.</p>
           </div>
         </div>

@@ -40,8 +40,11 @@ async function main() {
       for (const route of routes) {
         console.log(`Prerendering ${route}...`);
         await page.goto(`http://localhost:${port}${route}`, {
-          waitUntil: "networkidle0",
+          waitUntil: "networkidle2",
         });
+        // Wait for dynamic SEO elements to inject before capturing HTML
+        await page.waitForSelector('link[rel="canonical"]', { timeout: 5000 }).catch(() => {});
+        await page.waitForSelector('script[type="application/ld+json"]', { timeout: 5000 }).catch(() => {});
 
         // Wait for React to hydrate and SEOHead to update the document
         // We look for a change in the <title> tag, or just wait 1s.

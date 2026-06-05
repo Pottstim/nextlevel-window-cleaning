@@ -30,8 +30,8 @@ export default function CTASection({
               <ArrowRight size={18} /> Get a Free Estimate
             </span>
           </Link>
-          <a href="tel:3234851020" className="btn-outline-white text-base px-8 py-3.5">
-            <Phone size={18} /> (323) 485-1020
+          <a href="tel:9104851020" className="btn-outline-white text-base px-8 py-3.5">
+            <Phone size={18} /> (910) 485-1020
           </a>
         </div>
       </div>

@@ -9,8 +9,8 @@ import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone } from "lucide-r
 import { PRESSURE_WASHING_HERO } from "@/config/images";
 
 // Phone number with local NC area code
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+const PHONE = "(910) 485-1020";
+const PHONE_HREF = "tel:9104851020";
 
 const surfaces = ["Driveways & Sidewalks","Patios & Decks","Siding & Brick","Fences","Garage Floors","Retaining Walls"];
 const faqs = [
@@ -77,10 +77,10 @@ export default function ResidentialPressureWashing() {
         <div className="container max-w-3xl">
           <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-4">Restore Your Home's Exterior</h2>
           <p className="text-gray-600 leading-relaxed ml-5 mb-4">
-            North Carolina's humidity and tree cover mean algae, mold, and grime build up fast on driveways, patios, and siding. Pressure washing is one of the most effective ways to restore your home's exterior and protect surfaces from long-term damage.
+            Living in Sanford means fighting a constant battle against North Carolina humidity. Between the heavy pollen seasons and dense tree cover, it doesn't take long for green algae and black mold to take over your driveway, siding, and back deck. We don't just blast these surfaces with water — we adjust our pressure levels to safely wash away the grime without gouging your wood or cracking your vinyl.
           </p>
           <p className="text-gray-600 leading-relaxed ml-5">
-            We use professional-grade equipment and adjust pressure levels for each surface type — so you get a thorough clean without any risk of damage.
+            Every job uses professional-grade equipment calibrated to the surface we're cleaning. Concrete gets higher pressure. Wood decks get a gentler touch. Your home gets what it actually needs — not a one-setting-fits-all approach.
           </p>
         </div>
       </section>

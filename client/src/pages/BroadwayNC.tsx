@@ -8,8 +8,8 @@ import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { CheckCircle, MapPin, ArrowRight, Phone } from "lucide-react";
 import { GALLERY } from "@/config/images";
 
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+const PHONE = "(910) 485-1020";
+const PHONE_HREF = "tel:9104851020";
 const HERO_IMG = GALLERY.gallery_03;
 
 const services = [
@@ -77,7 +77,7 @@ export default function BroadwayNC() {
           <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-4">Serving Broadway, NC with Pride</h2>
           <div className="ml-5 flex flex-col gap-4 text-gray-600 leading-relaxed">
             <p>Broadway is a growing community on the edge of Lee and Harnett counties, and Next Level Window Cleaning is proud to serve its homeowners and business owners with top-tier exterior cleaning services.</p>
-            <p>The local climate brings pollen, humidity, and seasonal debris that accumulate quickly on windows, gutters, and siding. Our team uses the right methods and equipment to restore every surface safely.</p>
+            <p>Broadway sits in the kind of landscape that's beautiful to look at but tough on a home's exterior. Between the tree cover, humidity, and seasonal pollen drops, windows and siding pick up a layer of grime fast. We adjust our methods to the job — not the other way around.</p>
             <p>We're fully insured and dedicated to delivering spotless results every time — no mess, no hassle.</p>
           </div>
         </div>

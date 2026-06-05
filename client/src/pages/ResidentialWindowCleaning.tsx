@@ -11,14 +11,14 @@ import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 const HERO_IMG = RESIDENTIAL_WINDOW_CLEANING_HERO;
 
 // Phone number with local NC area code
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+const PHONE = "(910) 485-1020";
+const PHONE_HREF = "tel:9104851020";
 
 const benefits = [
   "Better natural light inside your home",
   "Improved curb appeal and first impressions",
   "Longer window lifespan — removes corrosive buildup",
-  "Streak-free, crystal-clear results",
+  "Clean glass that actually stays clean",
   "Safe cleaning methods for all window types",
   "Interior and exterior cleaning available",
 ];
@@ -93,7 +93,7 @@ export default function ResidentialWindowCleaning() {
         <div className="container max-w-3xl">
           <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-4">What Is Residential Window Cleaning?</h2>
           <p className="text-gray-600 leading-relaxed ml-5 mb-4">
-            Professional window cleaning goes far beyond what a garden hose or paper towels can do. We remove hard water deposits, oxidation, pollen, and grime that build up over time — leaving your windows streak-free and crystal clear.
+            Professional window cleaning isn't just about looks — it actually protects your glass. Hard water deposits, oxidation, and pollen etch into the surface over time. We remove that buildup so your windows stay clear and last longer. No streaks, no leftover film, no garden-hose guesswork.
           </p>
           <p className="text-gray-600 leading-relaxed ml-5">
             Next Level Window Cleaning serves homeowners throughout Sanford, NC with thorough, careful service. We treat your home like our own and take pride in the results we deliver.

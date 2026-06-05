@@ -10,9 +10,9 @@ import {
 } from "lucide-react";
 import { LOGO_URL } from "@/config/images";
 
-// ⚠️ TODO: PHONE IS A LOS ANGELES (323) AREA CODE — replace with a local NC (910/919) number via Google Voice or Twilio for local credibility
-const PHONE = "(323) 485-1020";
-const PHONE_HREF = "tel:3234851020";
+// ✅ Phone updated to local NC (910) area code for Sanford-area credibility
+const PHONE = "(910) 485-1020";
+const PHONE_HREF = "tel:9104851020";
 const FB_URL = "https://www.facebook.com/people/Next-Level-Window-Cleaning/61579913446585/";
 
 const navItems = [

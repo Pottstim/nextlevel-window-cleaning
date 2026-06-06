@@ -75,6 +75,14 @@ export const seoMap: Record<string, { title: string; description: string }> = {
     title: "Privacy Policy | Next Level Window Cleaning",
     description: "Privacy policy for Next Level Window Cleaning."
   },
+  "/guides/seasonal-cleaning-calendar-nc": {
+    title: "Exterior Cleaning Calendar for NC Homes | Next Level",
+    description: "Monthly guide to exterior cleaning in North Carolina. From pollen season to holiday lights. Learn when to pressure wash, soft wash, clean gutters, and more."
+  },
+  "/guides/soft-washing-vs-pressure-washing": {
+    title: "Soft Washing vs. Pressure Washing | Next Level Window Cleaning",
+    description: "N.C. homeowner's guide to soft washing versus pressure washing. Learn which method is safest for roofs, siding, driveways, and more."
+  },
   "/terms": {
     title: "Terms of Service | Next Level Window Cleaning",
     description: "Terms of service for Next Level Window Cleaning."

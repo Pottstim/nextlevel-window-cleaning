@@ -48,6 +48,9 @@ function Router() {
       <Route path="/service-areas/broadway-nc" component={BroadwayNC} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
+      <Route path="/guides/seasonal-cleaning-calendar-nc" component={SeasonalCalendarGuide} />
+      <Route path="/guides/soft-washing-vs-pressure-washing" component={SoftWashingGuide} />
+      <Route path="/guides" component={SeasonalCalendarGuide} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

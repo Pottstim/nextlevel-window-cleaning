@@ -76,9 +76,9 @@ export default function SpringLakeNC() {
         <div className="container max-w-3xl">
           <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-4">Serving Spring Lake, NC with Pride</h2>
           <div className="ml-5 flex flex-col gap-4 text-gray-600 leading-relaxed">
-            <p>Spring Lake is a growing community on the edge of Lee and Harnett counties, and Next Level Window Cleaning is proud to serve its homeowners and business owners with top-tier exterior cleaning services.</p>
-            <p>Spring Lake homes sit in a pocket where humidity and tree cover meet — perfect conditions for algae, mildew, and dirty windows. We're nearby and we know the territory. Same-day estimates, no runaround.</p>
-            <p>We're fully insured and dedicated to delivering spotless results every time — no mess, no hassle.</p>
+            <p>Spring Lake sits at the gateway to Fort Liberty, one of the largest military installations in the world. We're proud to serve the military families, retirees, and long-time residents who call this Cumberland County community home. Whether you're stationed here or putting down roots, your property deserves professional care.</p>
+            <p>The Little River watershed and surrounding pine forests mean Spring Lake properties get hit with year-round pollen, heavy spring green-up, and the kind of humidity that turns clean siding green in a single season. Our soft washing treatments are especially effective here — they kill the algae at the root instead of just blasting it off the surface.</p>
+            <p>We understand the demands on military families: deployment schedules, PCS moves, rental property turnover. We work around your timeline, not ours. Same-day estimates, flexible scheduling, and honest pricing — no upcharges, no surprises.</p>
           </div>
         </div>
       </section>

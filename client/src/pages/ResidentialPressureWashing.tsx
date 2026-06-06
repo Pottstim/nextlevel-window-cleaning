@@ -3,7 +3,7 @@ import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
-import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { SchemaMarkup, ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone } from "lucide-react";
 import { PRESSURE_WASHING_HERO } from "@/config/images";
@@ -47,6 +47,15 @@ export default function ResidentialPressureWashing() {
         url="/residential/pressure-washing" 
       />
       <BreadcrumbSchema items={[{"name":"Home","url":"/"},{"name":"Residential","url":"/residential"},{"name":"Pressure Washing","url":"/residential/pressure-washing"}]} />
+      <SchemaMarkup schema={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+        }))
+      }} />
       <section className="relative min-h-[380px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={PRESSURE_WASHING_HERO} alt="Pressure washing Sanford NC" className="w-full h-full object-cover" />
@@ -79,9 +88,53 @@ export default function ResidentialPressureWashing() {
           <p className="text-gray-600 leading-relaxed ml-5 mb-4">
             Living in Sanford means fighting a constant battle against North Carolina humidity. Between the heavy pollen seasons and dense tree cover, it doesn't take long for green algae and black mold to take over your driveway, siding, and back deck. We don't just blast these surfaces with water — we adjust our pressure levels to safely wash away the grime without gouging your wood or cracking your vinyl.
           </p>
-          <p className="text-gray-600 leading-relaxed ml-5">
+          <p className="text-gray-600 leading-relaxed ml-5 mb-4">
             Every job uses professional-grade equipment calibrated to the surface we're cleaning. Concrete gets higher pressure. Wood decks get a gentler touch. Your home gets what it actually needs — not a one-setting-fits-all approach.
           </p>
+        </div>
+      </section>
+
+      <section className="py-14 bg-white border-t border-gray-100">
+        <div className="container max-w-3xl">
+          <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-6">Why Pressure Washing Matters in North Carolina</h2>
+          <div className="ml-5 space-y-4 text-gray-600 leading-relaxed">
+            <p>
+              North Carolina's climate creates the perfect conditions for organic growth on exterior surfaces. Warm, humid summers combined with mild winters mean mold, mildew, and algae never really go dormant — they just slow down. Homeowners in Lee County, Harnett County, and throughout the Sandhills region deal with a unique set of challenges that require more than a garden hose.
+            </p>
+            <p>
+              <strong className="text-gray-900">Red clay stains.</strong> If you've lived in central NC for any length of time, you know the struggle. Red clay dust settles on driveways, sidewalks, and siding after every rain. Left untreated, it bonds to porous surfaces like concrete and brick, creating stubborn orange-brown stains that only professional-grade pressure washing equipment can remove.
+            </p>
+            <p>
+              <strong className="text-gray-900">Pine pollen and tree sap.</strong> Sanford sits in the heart of North Carolina's pine country. Each spring, a thick yellow blanket of pine pollen coats every exterior surface. When pollen mixes with morning dew and afternoon humidity, it forms a sticky film that traps dirt and accelerates algae growth. Regular pressure washing keeps this cycle from building up year after year.
+            </p>
+            <p>
+              <strong className="text-gray-900">Hurricane season debris.</strong> From June through November, tropical weather patterns push heavy rain and wind across the Sandhills. The resulting organic debris — leaves, pine needles, mud splatter — leaves behind stains that set in if not addressed quickly. We offer post-storm cleanup pressure washing for homeowners who need fast turnaround.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 bg-sky-tint">
+        <div className="container max-w-3xl">
+          <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-6">Our Pressure Washing Process</h2>
+          <div className="ml-5 space-y-5">
+            <div>
+              <h3 className="font-bold text-gray-900 text-lg mb-1" style={{ fontFamily: 'Manrope, sans-serif' }}>1. Surface Assessment</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Before we touch a trigger, we walk your property and assess every surface. Concrete, brick, wood, vinyl — each material has a maximum safe PSI. We identify problem areas, check for pre-existing damage, and plan the approach.</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-gray-900 text-lg mb-1" style={{ fontFamily: 'Manrope, sans-serif' }}>2. Pre-Treatment</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Heavily soiled areas get an eco-friendly detergent pre-treatment. This loosens organic growth and oil-based stains before we apply pressure, reducing the PSI needed and protecting your surfaces.</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-gray-900 text-lg mb-1" style={{ fontFamily: 'Manrope, sans-serif' }}>3. Pressure Washing</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">Using commercial-grade equipment with adjustable pressure and interchangeable nozzle tips, we clean each surface at exactly the right pressure. Concrete driveways might see 3,000 PSI. Cedar decks get 500-800 PSI with a fan tip. We never guess.</p>
+            </div>
+            <div>
+              <h3 className="font-bold text-gray-900 text-lg mb-1" style={{ fontFamily: 'Manrope, sans-serif' }}>4. Final Rinse & Inspection</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">A thorough rinse removes all cleaning agents and loosened debris. We walk the property with you to make sure every surface meets our standard — and yours.</p>
+            </div>
+          </div>
         </div>
       </section>
 

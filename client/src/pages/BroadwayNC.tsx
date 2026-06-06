@@ -76,9 +76,9 @@ export default function BroadwayNC() {
         <div className="container max-w-3xl">
           <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-4">Serving Broadway, NC with Pride</h2>
           <div className="ml-5 flex flex-col gap-4 text-gray-600 leading-relaxed">
-            <p>Broadway is a growing community on the edge of Lee and Harnett counties, and Next Level Window Cleaning is proud to serve its homeowners and business owners with top-tier exterior cleaning services.</p>
-            <p>Broadway sits in the kind of landscape that's beautiful to look at but tough on a home's exterior. Between the tree cover, humidity, and seasonal pollen drops, windows and siding pick up a layer of grime fast. We adjust our methods to the job — not the other way around.</p>
-            <p>We're fully insured and dedicated to delivering spotless results every time — no mess, no hassle.</p>
+            <p>Broadway is Lee County's quiet corner — a tight-knit community with deep agricultural roots and some of the prettiest rural properties in the Sandhills. From family farmhouses to newer subdivisions near US-421, we treat every Broadway property with the care it deserves.</p>
+            <p>Rural properties come with specific exterior cleaning challenges: long gravel driveways that track red clay onto concrete aprons, outbuildings and barns that collect years of grime, and mature landscaping that drops debris into gutters season after season. Our pressure washing and gutter cleaning services are built for properties exactly like these — we bring commercial-grade equipment and the experience to use it right.</p>
+            <p>Broadway homeowners appreciate direct communication and fair pricing. We don't do sales pitches — we show up, assess your property, give you an honest quote, and get the job done. Fully insured and proudly serving our Lee County neighbors.</p>
           </div>
         </div>
       </section>

@@ -11,7 +11,7 @@ import CTASection from "@/components/CTASection";
 import {
   Phone, ArrowRight, Shield, Star, Users, Clock, CheckCircle,
   MapPin, ChevronDown, ChevronUp, Home as HomeIcon, Building2,
-  Sparkles, Droplets, Lightbulb, Wind
+  Sparkles, Droplets, Lightbulb, Wind, Gauge
 } from "lucide-react";
 import { 
   HERO_GENERATED, GALLERY, RESIDENTIAL_WINDOW_CLEANING_HERO 
@@ -102,6 +102,13 @@ const services = [
     desc: "Professional holiday light installation and takedown.",
     href: "/residential/christmas-lights",
     color: "oklch(0.75 0.15 55)",
+  },
+  {
+    icon: Gauge,
+    title: "Gutter Cleaning",
+    desc: "Thorough gutter cleaning and downspout flushing. Prevent water damage before it starts.",
+    href: "/residential/gutter-cleaning",
+    color: "var(--brand-aqua)",
   },
 ];
 
@@ -230,7 +237,7 @@ export default function Home() {
             </div>
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-5 leading-tight"
               style={{ fontFamily: 'Manrope, sans-serif' }}>
-              Professional Window Cleaning &amp; Exterior Washing
+              Professional Window Cleaning &amp; Exterior Washing in Sanford, NC
             </h1>
             <p className="text-white/85 text-lg mb-8 leading-relaxed">
               Locally owned and fully insured. Serving homeowners and businesses in Sanford, NC with real results and honest service.
@@ -284,7 +291,7 @@ export default function Home() {
               From sparkling windows to clean driveways — we handle the exterior so you don't have to.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {services.map(({ icon: Icon, title, desc, href, color }) => (
               <Link key={href} href={href}>
                 <div className="service-card p-6 group cursor-pointer h-full">

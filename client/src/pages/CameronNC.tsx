@@ -76,9 +76,9 @@ export default function CameronNC() {
         <div className="container max-w-3xl">
           <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-4">Serving Cameron, NC with Pride</h2>
           <div className="ml-5 flex flex-col gap-4 text-gray-600 leading-relaxed">
-            <p>Cameron is a growing community on the edge of Lee and Harnett counties, and Next Level Window Cleaning is proud to serve its homeowners and business owners with top-tier exterior cleaning services.</p>
-            <p>Cameron homes deal with the same thing we do — pollen season hits hard and the humidity never really lets up. That combination means your windows, siding, and gutters need more attention than the average homeowner might expect. We handle it so you don't have to.</p>
-            <p>We're fully insured and dedicated to delivering spotless results every time — no mess, no hassle.</p>
+            <p>Cameron is a historic railroad town that straddles the Lee-Harnett county line — and we serve both sides. From the antique shops downtown to the newer developments spreading out along NC-24/27, Cameron homeowners trust Next Level Window Cleaning for exterior care that matches the town's pride in its property.</p>
+            <p>Cameron properties tend to have mature tree cover — towering oaks and pines that look beautiful but drop an endless supply of pollen, sap, and organic debris onto roofs, gutters, and siding. Our gutter cleaning service is especially popular here: clogged gutters in Cameron's wooded neighborhoods can cause foundation issues faster than most homeowners realize.</p>
+            <p>We're just a short drive from our Sanford base, which means fast response times and the flexibility to handle same-day or next-day service calls. Fully insured, locally owned, and genuinely invested in keeping Cameron looking its best.</p>
           </div>
         </div>
       </section>

@@ -24,6 +24,8 @@ import SpringLakeNC from "./pages/SpringLakeNC";
 import BroadwayNC from "./pages/BroadwayNC";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import SeasonalCalendarGuide from "./pages/SeasonalCalendarGuide";
+import SoftWashingGuide from "./pages/SoftWashingGuide";
 
 function Router() {
   return (

@@ -4,7 +4,7 @@ import useSEO from "@/hooks/useSEO";
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
-import { ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { ServiceSchema, BreadcrumbSchema, SchemaMarkup } from "@/components/SchemaMarkup";
 import CTASection from "@/components/CTASection";
 import { CheckCircle, ChevronDown, ChevronUp, ArrowRight, Phone, Building2, Calendar, Shield, FileText, Clock } from "lucide-react";
 import { COMMERCIAL_HERO } from "@/config/images";
@@ -54,6 +54,15 @@ export default function Commercial() {
         url="/commercial" 
       />
       <BreadcrumbSchema items={[{"name":"Home","url":"/"},{"name":"Commercial","url":"/commercial"}]} />
+      <SchemaMarkup schema={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+        }))
+      }} />
       <section className="relative min-h-[420px] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={COMMERCIAL_HERO} alt="Commercial window cleaning Sanford NC" className="w-full h-full object-cover" />
@@ -82,6 +91,18 @@ export default function Commercial() {
           <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-4">Built for Business</h2>
           <p className="text-gray-600 leading-relaxed ml-5 mb-4">Your storefront is the first thing customers see. Dirty windows, grimy siding, and stained walkways send the wrong message. We help businesses in Sanford, NC maintain a professional appearance year-round.</p>
           <p className="text-gray-600 leading-relaxed ml-5">We understand that commercial clients have different needs than homeowners — reliable scheduling, insurance documentation, flexible hours, and consistent quality. That's exactly what we deliver.</p>
+        </div>
+      </section>
+
+      {/* Sanford-specific commercial content */}
+      <section className="py-14 bg-white border-t border-gray-100">
+        <div className="container max-w-3xl">
+          <h2 className="section-heading text-2xl lg:text-3xl text-gray-900 mb-4">Why Sanford Businesses Choose Next Level</h2>
+          <div className="ml-5 space-y-4 text-gray-600 leading-relaxed">
+            <p>Sanford's downtown district along Carthage Street and the US-1 corridor sees heavy foot traffic — and heavy pollen. Between spring yellow pollen coats and summer algae buildup on north-facing storefronts, commercial properties in Lee County need more frequent cleaning than most owners expect. We're based right here in Sanford, which means we can respond fast when you need us — often the same day.</p>
+            <p>We work with property managers who oversee multiple buildings along the US-421 and NC-87 corridors, restaurant owners in the downtown historic district who need early-morning service before opening, and medical offices near Central Carolina Hospital that require consistent, documented cleaning schedules. Every property gets a custom plan — not a one-size-fits-all package.</p>
+            <p>Our commercial clients also appreciate that we carry full liability insurance and can be named as additionally insured on your policy. We provide certificates of insurance, professional invoices, and consistent communication — everything your accounting and compliance teams need.</p>
+          </div>
         </div>
       </section>
 
